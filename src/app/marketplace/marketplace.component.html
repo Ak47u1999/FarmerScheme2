@@ -1,0 +1,32 @@
+<p>marketplace works!</p>
+<div>
+            <table class="table" border="1">
+                <thead>
+                    <tr>
+                     
+                        <!-- <th>#</th> -->
+                        <th>Request Id</th>
+                        <th>FarmerId</th>
+                        <th>CropName</th>
+                        <th>CropType </th>
+                        <th>FertilizerType</th>
+                        <th>Quantity</th> 
+                        <th>isTransactionCompleted</th> 
+                        <th>Posted date</th>                                                       
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let market of viewmarketplace">
+                        <td>{{market.requestId}}</td>
+                        <td>{{market.farmerId}}</td>
+                        <td>{{market.cropName}}</td>
+                        <td>{{market.cropType}}</td>
+                        <td>{{market.fertilizerType}}</td>
+                        <td>{{market.quantity}}</td>
+                        <td>{{market.isTransactionCompleted}}</td>
+                        <td>{{market.postedDate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+ </div>

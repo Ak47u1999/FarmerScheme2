@@ -1,0 +1,180 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <title>Insurance</title>
+    <meta name="description" content="Insurance">
+    <meta name="keywords" content="html tutorial template">
+    <style>
+        .box {
+            border-style: solid;
+            border-color: rgb(1, 190, 190);
+            border-width: 5px;
+            /* 20px top and bottom, 5px on the sides */
+        }
+        .form-group {
+            margin-top: 2%;
+            margin-left: 12%;
+        }
+        .button {
+            padding: 7px;
+            background-color: rgb(1, 190, 190);
+            color: white;
+            border: none;
+            margin-left: 200px;
+            margin: 5px;
+        }
+        #title{
+            display: flex;
+            text-align: center;
+            align-items: center;
+            margin-left: 20%;
+        }
+        .buttonbox{
+            margin: 10px;
+            margin-left: 150px;
+            margin-top: 15px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <section class="box">
+        <div id="title">
+            <h1>Claim application</h1>
+        </div>
+        
+   
+        <div>
+            
+            <form [formGroup] = "insuranceclaimform" (ngSubmit)="submitForm()" novalidate>
+                <p class = "form-group"><b>Claim Details</b></p>
+                    <div class="form-group">
+                        <label>ClaimId</label>
+                        <input type="number" formControlName="ClaimId" class="form-control" maxlength="50" placeholder="Enter Your Claim Id">
+                    </div>
+            
+                    <div class="form-group">
+                        <label>DateOfRequest</label>
+                        <input type="date" formControlName="DateOfRequest" class="form-control" maxlength="10" >
+                    </div>
+            
+                    <div class="form-group">
+                        <label> PolicyNo </label>
+                        <input type="number" formControlName="PolicyNo" class="form-control" placeholder="Enter Policy holder">
+                    </div>
+            
+            
+                    <div class="form-group">
+                        <label>CauseOfLoss</label>
+                        <input type="text" formControlName="CauseOfLoss" class="form-control" placeholder="Cause Of Loss">
+                    </div>
+                    
+                     
+            
+                    <div class="form-group">
+                        <label>DateOfLoss</label>
+                        <input type="date" formControlName="DateOfLoss" class="form-control" >
+                    </div>
+        
+                    <div class="form-group">
+                        <label>ClaimStatus</label>
+                        <input type="checkbox" formControlName="ClaimStatus" class="form-control" >
+                    </div>
+                    <div class="buttonbox">
+                    
+                        <button class="button" type="submit">Submit</button>
+
+                    </div>
+            </form>
+        </div>   
+    </section>
+</body>
+
+</html>
+<!-- 
+<div>
+    <h1>Insurance Claim</h1>
+    <form [formGroup] = "insuranceclaimform" (ngSubmit)="submitForm()" novalidate>
+        <p>Claim Details</p>
+            <div class="form-group">
+                <label>ClaimId</label>
+                <input type="number" formControlName="ClaimId" class="form-control" maxlength="50">
+            </div>
+    
+            <div class="form-group">
+                <label>DateOfRequest</label>
+                <input type="date" formControlName="DateOfRequest" class="form-control" maxlength="10">
+            </div>
+    
+            <div class="form-group">
+                <label> PolicyNo </label>
+                <input type="number" formControlName="PolicyNo" class="form-control" >
+            </div>
+    
+    
+            <div class="form-group">
+                <label>CauseOfLoss</label>
+                <input type="text" formControlName="CauseOfLoss" class="form-control" >
+            </div>
+            
+             
+    
+            <div class="form-group">
+                <label>DateOfLoss</label>
+                <input type="date" formControlName="DateOfLoss" class="form-control" >
+            </div>
+
+            <div class="form-group">
+                <label>ClaimStatus</label>
+                <input type="checkbox" formControlName="ClaimStatus" class="form-control" >
+            </div>
+    
+           
+    
+    
+    
+    
+                <button type="submit"> Reset</button>&nbsp;&nbsp;
+            
+                <button type="submit"> Calculate</button>
+            
+    
+           
+        
+    
+    </form>
+    
+    
+    <!-- 
+    <p>create works!</p>
+    
+    <div>
+        <h1>Create Product</h1>
+        <form [formGroup]="productForm" (ngSubmit)="submitForm()" novalidate>
+            <div class="form-group">
+                <label>ID</label>
+                <input type="number" formControlName="id" class="form-control" maxlength="20">
+            </div>
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" formControlName="name" class="form-control" maxlength="20">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" formControlName="description" rows="3" maxlength="50"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Price</label>
+                <input type="number" formControlName="price" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Quantity</label>
+                <input type="number" formControlName="quantity" class="form-control">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div> -->
+     -->

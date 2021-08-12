@@ -1,0 +1,199 @@
+
+<br><br>
+<div id="myme" style="background-image: url('assets/home(1).jpg');background-color: RGBA(15, 5, 20, 0.84);background-attachment: fixed;
+ background-repeat: no-repeat; background-size: cover;">
+    <div class="bg-overlay1">
+        <div class="container" style="border: 3px solid black; width: 100%; height:75%;">
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner-text">
+                        <br><br>
+                        <h2 style="color: #EB233C" >What you can do with AgriFarm</h2>
+                        <br><br>
+                        <ul style="color: white;padding-left: 30px;">&nbsp;&nbsp;
+                            <li style="font-size: 30px;">
+                                <h3 > Enroll Yourself on the AgroService to sell crops!</h3>
+                                    
+                            </li>
+                            <li style="font-size: 30px; ">
+                                <h3 > Register Yourself with all given credentials
+                                    as part
+                                    of the registration process.</h3>
+                            </li>
+                            <li style="font-size: 30px; " >
+                                <h3 > After Logging in, You are allowed to sell your desired Crops
+                                </h3>
+                            </li>
+                            <li style="font-size: 30px; ">
+                                <h3 > After Logging in, You will be able to see all the bidders who
+                                    are bidding on your crop.
+                                </h3>
+                            </li>
+                            <li style="font-size: 30px; ">
+                                <h3>After Logging in, You can avail insurance once.
+                                </h3>
+                            </li>
+
+                            <li style="font-size: 30px; ">
+                                <h3> Sell it! To get high returns!</h3>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+<p>Farmer Registration</p>
+   <form  [formGroup]="farmerRegistrationForm" (ngSubmit)="submitForm()" novalidate >
+    <p>Personal Details</p>
+    
+        <div class="form-group">
+            <div class="form-group">
+                <label>ID</label>
+                <input type="number" formControlName="FarmerId"   class="form-control" />
+             </div>
+         <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" formControlName="FarmerName"   class="form-control" maxlength="50"/>
+         </div>
+         <div class="form-group">
+            <label>Contact number</label>
+            <input type="text" formControlName="PhoneNumber"   class="form-control" maxlength="50"/>
+         </div>
+         <div class="form-group">
+            <label>E-Mail ID</label>
+            <input type="text" formControlName="FarmerMailId"   class="form-control" maxlength="50"/>
+         </div>
+        </div> 
+
+        <p>Crop Details</p>
+        <div class="form-group">
+            <label>Crop Type</label>
+            <input type="text" formControlName="CropType"   class="form-control" maxlength="50"/>
+         </div>
+         <div class="form-group">
+            <label>Crop Name</label>
+            <input type="text" formControlName="CropName"   class="form-control" maxlength="50"/>
+         </div>
+        
+         <div class="form-group">
+             <p>Bank Details</p>
+            <label>Bank Account Number</label>
+            <input type="text" formControlName="BankAccNo"   class="form-control" maxlength="50"/>
+         </div>
+         <div class="form-group">
+            <label>Bank IFSC </label>
+            <input type="text" formControlName="BankIfsc"   class="form-control" maxlength="50"/>
+         </div>
+         <div class="form-group">
+            <label>Document Status </label>
+            <input type="checkbox" formControlName="DocumentStatus"   class="form-control"/>
+         </div>
+         <div class="form-group">
+            <label>Password </label>
+            <input type="text" formControlName="FarmerPassword"   class="form-control" maxlength="50"/>
+         </div>
+         <div class="form-group">
+            <label>Confirm Password </label>
+            <input type="password" formControlName="FarmerPassword"   class="form-control" maxlength="50"/>
+         </div>
+         <div class="form-group">
+            <label>Status </label>
+            <input type="checkbox" formControlName="AdminApprovalStatus"   class="form-control"/>
+         </div>
+        
+         <button type="submit"> REGISTER</button>
+        
+     </form>
+
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+
+    
+<!-- <div><p>Land Details</p>
+        <p>
+              <label for="Address">Address</label>
+                <input type="text"  name="Address" />
+            </p>
+
+            <p>
+                <label for="Area">Area</label>
+                <input type="text" name="area" />
+            </p>
+            
+            <p>
+                <label for="pin">PinCode</label>
+                <input type="int" name="pincode" />
+            </p>
+
+
+
+
+            
+        </div>
+
+        <div><p>Bank Details</p>
+               
+                <p>
+                    <label for="City">Account No</label>
+                    <input type="text" name="city" />
+                </p>
+                <p>
+                    <label for="state">IFSC Code</label>
+                    <input type="text" name="state" />
+                </p>
+                
+    
+    
+    
+    
+                
+            </div>
+        <div>
+            <p>
+                <label for="password">Password</label>
+                <input type="text" name="password" />
+            </p>
+            <p>
+                <label for="cpassword">Confirm Password</label>
+                <input type="text" name="cpassword" />
+            </p>
+        </div>
+
+<div><p>Document Upload</p>
+        <label for="myfile">Aadhaar </label>
+        <input type="file" id="myfile" name="myfile">
+
+        <label for="myfile">PAN </label>
+        <input type="file" id="myfile" name="myfile">
+
+        <label for="myfile">Trader License</label>
+        <input type="file" id="myfile" name="myfile">
+
+
+    </div>
+    <br>
+        
+
+           
+
+       
+    
+
+</form>
+ -->

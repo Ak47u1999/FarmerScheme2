@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Insurance</title>
+    <meta name="description" content="Insurance">
+    <meta name="keywords" content="html tutorial template">
+    <style>
+        .box {
+            border-style: solid;
+            border-color: rgb(1, 190, 190);
+            border-width: 5px;
+            /* 20px top and bottom, 5px on the sides */
+        }
+        .form-group {
+            margin-top: 2%;
+            margin-left: 12%;
+        }
+        .button {
+            padding: 7px;
+            background-color: rgb(1, 190, 190);
+            color: white;
+            border: none;
+            margin-left: 200px;
+            margin: 5px;
+        }
+        #title{
+            display: flex;
+            text-align: center;
+            align-items: center;
+            margin-left: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="box">
+        <div id="title">
+            <h1>Insurance application</h1>
+        </div>
+        
+   
+    <form [formGroup] = "insuranceApplicationForm" (ngSubmit)="submitForm()" novalidate>
+        <p class = "form-group"><b>Application Details</b></p>
+            <div class="form-group">
+                <label>PolicyNo</label>
+                <input type="number" formControlName="PolicyNo" class="form-control" maxlength="50" placeholder="please enter policy no">
+            </div>
+    
+            <div class="form-group">
+                <label>FarmerId</label>
+                <input type="number" formControlName="FarmerId" class="form-control" maxlength="10" placeholder="please enter policy no">
+            </div>
+    
+            <div class="form-group">
+                <label> InsuranceCompany </label>
+                <input type="text" formControlName="InsuranceCompany" class="form-control" placeholder="please enter InsuranceCompany">
+            </div>
+                
+            <div class="form-group">
+                <label>Crop Type</label>
+                <select formControlName="CropName" class="form-control">
+                    <option value="Kharif">Kharif</option>
+                    <option value="Rabi">Rabi</option>
+                    <option value="Horticulture">Horticulture</option>
+                  </select>
+                  <!-- <input type="text" formControlName="CropName" class="form-control" placeholder="please enter CropName"> -->
+            </div>
+    
+            <div class="form-group">
+                <label>Area</label>
+                <input type="number" formControlName="Area" class="form-control" placeholder="please enter Area">
+            </div>
+
+            <div class="form-group">
+                <label>TotalSumInsured</label>
+                <input type="number" formControlName="TotalSumInsured" class="form-control" >
+            </div>
+    
+            <div class="form-group">
+                <label>Status</label>
+                <input type="checkbox" formControlName="Status" class="form-control" >
+            </div>
+            
+            <button class ="button" type="submit"> Calculate</button>
+            
+    </form>
+
+    <p>The premium amount is {{this.premiumamt}}</p><br>
+    <p>The Sum Insured per Hectare is {{this.suminsuredperhectare}}</p>
+
+    </section>
+</body>
+
+</html>

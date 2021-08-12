@@ -1,0 +1,14 @@
+span{
+    font-size:large;
+}
+div{
+    margin-top:5px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    font-size:medium;
+    overflow: hidden;
+    position:relative; 
+    background-color:lightblue; 
+
+}

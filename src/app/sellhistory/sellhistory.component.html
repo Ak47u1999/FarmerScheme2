@@ -1,0 +1,41 @@
+<p>sellhistory works!</p>
+<div class="banner" id="banner">
+    <div class="bg-overlay2">
+        <div class="contact" id="contact">
+            <div class="container">
+                <div>
+                    <div>
+                        <div class="text-center">
+                            <h3>Sale History</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <table class="table">
+                            <thead>
+                                <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                                <th>Date of Sale</th>
+                                <th>Crop Name</th>
+                                <th>Quantity</th>
+                                <th>Minimum Sale Price</th>
+                                <th>Sold Price</th>
+                                <th>Total Price</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let s of soldhistory ">
+                                    <td>{{s.soldDate}}</td>
+                                    <td>{{s.cropName}}</td>
+                                    <td>{{s.quantity}}</td>
+                                    <td>₹ {{s.msp}}</td>
+                                    <td>₹ {{s.soldPrice}}</td>
+                                    <td>₹ {{s.totalPrice}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+</div>

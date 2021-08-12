@@ -1,0 +1,42 @@
+
+
+
+<div class="main">
+    <div id="form">
+        <form #myform="ngForm">
+            <!-- (ngSubmit)="myform.form.valid && loginuser()" -->
+            <label for="uname"><b>Email id</b></label>
+            <input type="email" id="emailid" name="email" class="inputText" required email />  <!--  [(ngModel)]="login.email" -->
+                <!-- #email="ngModel" /> -->
+            <label for="uname"><b>Password</b></label>
+            <input id="password" type="password" name="pass" class="inputText" required /><!--[(ngModel)]="login.password" -->
+                <!-- #pass="ngModel" /> -->
+
+
+
+                <br>
+
+                <div>
+                    <label for="UserType">Enter User Type: </label><br>
+                    
+                    <!-- [(ngModel)]=login.UserType #UserType="ngModel" -->
+                    <input type="radio" name="UserType" value="Farmer" >Farmer &nbsp;&nbsp;
+                    <!-- [(ngModel)]=login.UserType #UserType="ngModel" -->
+                    <input type="radio" name="UserType" value="Bidder" >Bidder &nbsp;&nbsp;
+                    <!-- [(ngModel)]=login.UserType #UserType="ngModel" -->
+                </div><br>
+                
+            <input type="submit" value="Login" id="submit">
+        </form>
+        <div id="signup"> <a routerLink="FarmerRegistration" >Are you new here? </a> </div>
+    
+       <!--  <div  *ngIf = "myform.form.invalid">
+        <div class="error" *ngIf="email.invalid && (email.dirty || email.touched)">
+            You need to enter an email
+        </div>
+        <div class="error" *ngIf="pass.invalid && (pass.dirty || pass.touched)">
+            Please enter password to login
+        </div>
+    </div>-->
+    </div>
+    </div>
