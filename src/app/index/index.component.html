@@ -1,4 +1,4 @@
-<p>index works!</p>
+
 
 <!doctype html>
 <html>
@@ -32,14 +32,10 @@
 <body>
 <section class="box">
 
-    <nav class="navbar">
-        <ul>Bidding</ul>
-        <ul>Insurance</ul>
-        <ul>Logout</ul>
-    </nav>
+   
     <section class = "Body">
-        <ul class= "main"><a routerLink="Applyforpolicy">Apply for Policy</a> </ul>
-        <ul class= "main"><a routerLink="ClaimInsurance">Claim Insurance</a></ul>
+        <ul class= "main"><p (click)="Applyforpolicy()">Apply for Policy</p> </ul>
+        <ul class= "main"><p (click)="ClaimInsurance()">Claim Insurance</p></ul>
         <router-outlet> </router-outlet>
     </section>
 

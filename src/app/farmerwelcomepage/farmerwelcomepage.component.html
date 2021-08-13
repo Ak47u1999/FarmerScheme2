@@ -6,13 +6,16 @@
         <br>
         <h2>Select your choice</h2><br />
         <p>
-            <a style="color:#26269c;font-size:25px;" [routerLink]="'/crop'">Place Sell request</a>
+            <span style="color:#26269c;font-size:25px;" (click)="gotoplacerequest()">Place Sell request</span>
         </p><br>
         <p>
-            <a style="color:#26269c;font-size:25px;" [routerLink]="'/app-viewsoldhistory'">View Sold Crop History</a>
+            <a style="color:#26269c;font-size:25px;" (click)="gotosellhistory()">View Sold Crop History</a>
         </p><br>
         <p>
-            <a style="color:#26269c;font-size:25px;" routerLink="MarketPlace">View Marketplace</a>
+            <a style="color:#26269c;font-size:25px;"(click)="gotomarketplace()">View Marketplace</a>
+        </p><br>
+        <p> 
+            <a style="color:#26269c;font-size:25px;"(click)="gotoinsurance()">Insurance</a>
         </p><br>
 
     </div>

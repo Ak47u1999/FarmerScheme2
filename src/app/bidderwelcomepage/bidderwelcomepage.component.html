@@ -1,6 +1,144 @@
 
+<!doctype html>
+<html>
 
-<div class="banner" id="banner">
+<head>
+    <title>Bidder</title>
+    <meta name="description" content="Insurance">
+    <meta name="keywords" content="html tutorial template">
+    <style>
+        .box {
+            border-style: solid;
+            border-color: rgb(1, 190, 190);
+            border-width: 5px;
+            /* 20px top and bottom, 5px on the sides */
+        }
+
+        .form-group {
+            margin-top: 2%;
+            margin-left: 45%;
+        }
+
+        .button {
+            padding: 7px;
+            background-color: rgb(1, 190, 190);
+            color: white;
+            border: none;
+            margin-left: 200px;
+            margin: 5px;
+        }
+
+        #title {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            margin-left: 45%;
+        }
+
+        .buttonbox {
+            margin: 10px;
+            margin-left: 45%;
+            margin-top: 15px;
+
+        }
+
+        .box p {
+            margin-left: 45%;
+        }.uploads{
+            margin-left: 12%;
+        }.table{
+            margin-left: 27%;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="box">
+        <div id="title">
+            <h1>Bidder Welcome</h1>
+        </div>
+        <div class="banner" id="banner">
+            <div class="bg-overlay2">
+                <div class="contact" id="contact">
+                    <div class="container">
+                        <div>
+                            <div>
+                                <div class="text-center">
+                                    <h3>Bidding</h3>
+                                </div>
+                            </div>
+                            <div>
+                                <table border="1" width="100%">
+                                    <thead>
+                                        <th>Crop Name </th>
+                                        <th>Crop Type</th>
+                                        <th>Quantity</th>
+                                        
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let s of crops ">
+                                            
+                                            <td>{{s.cropName}}</td>
+                                            <td>{{s.cropType}}</td>
+                                            <td>{{s.quantity}}</td>   
+                                        </tr >
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="table">
+                                <table class="table" border="1">
+                                    <thead>
+                                        <th>Current Bid</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let c of currentbid"  ><td>{{c.bidAmount}}</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+        
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+        </div>
+        
+        <form [formGroup]="bidderposthisbidform" (ngSubmit)="submitForm()" novalidate>
+             
+            
+            <div class="form-group">
+                <label>Transaction Id</label>
+                <input type="number" formControlName="transactionId" class="form-control" value="{{this.tosendtransactionId}}" readonly>
+            </div>
+            <div class="form-group">
+                <label>Request Id</label>
+                <input type="number" formControlName="requestId" class="form-control" value="{{this.tosendrequestId}}" readonly>
+            </div>
+            <div class="form-group">
+                <label>Bidder Id</label>
+                <input type="number" formControlName="bidderId" class="form-control" >
+            </div>
+            <div class="form-group">
+                <label>Bid Amount</label>
+                <input type="number" formControlName="bidAmount" class="form-control" >
+            </div>
+            <div class="form-group">
+                <label>Bid Date</label>
+                <input type="date" formControlName="bidDate" class="form-control" >
+            </div>
+            <div class="buttonbox">
+
+                <button type="submit" class="button">Confirm</button>
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>
+<!-- <div class="banner" id="banner">
     <div class="bg-overlay2">
         <div class="contact" id="contact">
             <div class="container">
@@ -11,14 +149,12 @@
                         </div>
                     </div>
                     <div>
-                        <table class="table">
+                        <table class="table" border="1">
                             <thead>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <th>Crop Name </th>
                                 <th>Crop Type</th>
                                 <th>Quantity</th>
                                 
-                                <th>Current Bid</th>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let s of crops ">
@@ -27,6 +163,16 @@
                                     <td>{{s.cropType}}</td>
                                     <td>{{s.quantity}}</td>   
                                 </tr >
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="table" border="1">
+                            <thead>
+                                <th>Current Bid</th>
+                            </thead>
+                            <tbody>
                                 <tr *ngFor="let c of currentbid"  ><td>{{c.bidAmount}}</td></tr>
                             </tbody>
                         </table>
@@ -35,6 +181,31 @@
                 </div>
             </div>
         </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br>
     </div>
 </div>
+
+<form [formGroup]="bidderposthisbidform" (ngSubmit)="submitForm()" novalidate>
+     
+    
+    <div class="form-group">
+        <label>Transaction Id</label>
+        <input type="number" formControlName="transactionId" class="form-control" value="{{this.tosendtransactionId}}" readonly>
+    </div>
+    <div class="form-group">
+        <label>Request Id</label>
+        <input type="number" formControlName="requestId" class="form-control" value="{{this.tosendrequestId}}" readonly>
+    </div>
+    <div class="form-group">
+        <label>Bidder Id</label>
+        <input type="number" formControlName="bidderId" class="form-control" >
+    </div>
+    <div class="form-group">
+        <label>Bid Amount</label>
+        <input type="number" formControlName="bidAmount" class="form-control" >
+    </div>
+    <div class="form-group">
+        <label>Bid Date</label>
+        <input type="date" formControlName="bidDate" class="form-control" >
+    </div>
+    <button>Confirm</button> -->

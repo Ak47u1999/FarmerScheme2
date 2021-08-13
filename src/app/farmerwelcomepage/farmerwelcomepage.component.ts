@@ -8,9 +8,25 @@ import { Router } from '@angular/router';
 })
 export class FarmerwelcomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+  gotoplacerequest()
+  { 
+    this.router.navigate(['placerequest'])
+  }
+  gotosellhistory()
+  { 
+    this.router.navigate(['sellhistory'])
+  }
+  gotomarketplace()
+  { 
+    this.router.navigate(['MarketPlace'])
+  }
+  gotoinsurance()
+  { 
+    this.router.navigate(['insurance'])
   }
 
 }

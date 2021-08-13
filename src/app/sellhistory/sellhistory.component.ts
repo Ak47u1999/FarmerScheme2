@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../services/crud.service';
 import {Farmersoldhistory } from 'src/models/FarmersoldHistory';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sellhistory',
@@ -9,12 +10,16 @@ import {Farmersoldhistory } from 'src/models/FarmersoldHistory';
 })
 export class SellhistoryComponent implements OnInit {
   soldhistory:Farmersoldhistory[]=[];
-  constructor(public service :CrudService) { }
+  constructor(public service :CrudService,private router: Router) { }
 
   ngOnInit(): void {
     this.service.fetchsoldhistory().subscribe((data: Farmersoldhistory[])=>{
       console.log(data)
       this.soldhistory = data;}); 
+  }
+  gotofarmerwelcome()
+  {
+   this.router.navigate(['FarmerWelcome'])
   }
 
 }

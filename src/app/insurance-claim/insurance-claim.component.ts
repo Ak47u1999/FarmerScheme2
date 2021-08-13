@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { InsuranceClaim } from 'src/models/InsuranceClaim';
 import { CrudService } from '../services/crud.service';
 
@@ -11,7 +12,7 @@ import { CrudService } from '../services/crud.service';
 export class InsuranceClaimComponent implements OnInit {
   insuranceclaimform! : FormGroup;
   insuranceclaim!: InsuranceClaim; 
-  constructor(public service :CrudService, public fb: FormBuilder) { }
+  constructor(public service :CrudService, public fb: FormBuilder,private router: Router) { }
 
   ngOnInit(): void {
     this.insuranceclaimform =this.fb.group({
@@ -27,6 +28,11 @@ export class InsuranceClaimComponent implements OnInit {
 
   submitForm() {
 
+    this.insuranceclaimform.value.ClaimStatus=0;
     this.service.InsuranceClaimFunc(this.insuranceclaimform.value).subscribe();
+  }
+  gotofarmerwelcome()
+  {
+    this.router.navigate(['FarmerWelcome'])
   }
 }

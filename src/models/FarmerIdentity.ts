@@ -3,8 +3,8 @@ import { FarmerAddress } from "./FarmerAddress";
 export interface Farmeridentity
 {
   
-     FarmerId : number;
-     FarmerName : string ;
+     farmerId : number;
+     farmerName : string ;
      CropName : string;
      CropType : string;
      PhoneNumber : string;

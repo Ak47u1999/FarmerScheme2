@@ -4,6 +4,7 @@ import { Loginfeildfarmer } from 'src/models/Loginfeildfarmer';
 import { CrudService } from '../services/crud.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-farmer',
@@ -16,15 +17,23 @@ export class LoginFarmerComponent implements OnInit {
   Loginfarmer !: Loginfeildfarmer;
   val : number =0;
 
-  constructor(public service:CrudService, public fb :FormBuilder) { }
+  constructor(public service:CrudService, public fb :FormBuilder,private router: Router) { }
 
   ngOnInit(): void {
 
     this.loginfarmerform=this.fb.group({
       Uname : [],
       Password : [] ,
-      })
-  }
+      })}
+
+      gotoFarmerreg()
+      {
+        this.router.navigate(['FarmerRegistration'])
+      }
+      gotoFarmerwelcome()
+      {
+        this.router.navigate(['FarmerWelcome'])
+      }
 
   submitForm() {
     this.loginfarmerform.value.isValid = false;

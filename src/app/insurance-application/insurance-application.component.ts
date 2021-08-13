@@ -16,9 +16,10 @@ export class InsuranceApplicationComponent implements OnInit {
   premiumamt ? : number;
   suminsuredperhectare ? : number;
   insuranceApplicationForm! : FormGroup;
-  insuranceApplication !: InsuranceApplication; 
- 
-  constructor(public service :CrudService, public fb: FormBuilder) {  
+  insuranceApplication !: InsuranceApplication;
+  insurancefetchvar : InsuranceApplication [] =[];
+
+  constructor(public service :CrudService, public fb: FormBuilder,private router: Router) {  
     
   }
 
@@ -36,10 +37,18 @@ export class InsuranceApplicationComponent implements OnInit {
     TotalSumInsured: [],
     Status: [],
     })
+
+    this.service.InsuranceApplicationFetchFunc().subscribe((data: InsuranceApplication[]) => {this.insurancefetchvar =data});
+  
+  }
+  gotofarmerwelcome()
+  {
+    this.router.navigate(['FarmerWelcome'])
   }
 
   submitForm() {
-
+    
+    this.insuranceApplicationForm.value.PolicyNo=this.insurancefetchvar.length+1;
     // console.log(this.insuranceApplicationForm.value.TotalSumInsured);
     if(this.insuranceApplicationForm.value.CropName === "Kharif")
      this.premiumamt = 0.02 * this.insuranceApplicationForm.value.TotalSumInsured;

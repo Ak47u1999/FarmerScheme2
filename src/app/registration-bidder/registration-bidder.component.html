@@ -1,114 +1,136 @@
-<br><br>
-<div id="myme" style="background-image: url('assets/home(1).jpg');background-color: RGBA(15, 5, 20, 0.84);background-attachment: fixed;
- background-repeat: no-repeat; background-size: cover;">
-    <div class="bg-overlay1">
-        <div class="container" style="border: 3px solid black; width: 100%; height:75%;">
-            <br>
-            <br>
-            <br>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="banner-text">
-                        <br><br>
-                        <h2 style="color: #EB233C">What you can do with Scheme for Farmers</h2>
-                        <br><br>
+<!doctype html>
+<html>
 
-                    </div>
+<head>
+    <title>Insurance</title>
+    <meta name="description" content="Insurance">
+    <meta name="keywords" content="html tutorial template">
+    <style>
+        .box {
+            border-style: solid;
+            border-color: rgb(1, 190, 190);
+            border-width: 5px;
+            /* 20px top and bottom, 5px on the sides */
+        }
+
+        .form-group {
+            margin-top: 2%;
+            margin-left: 45%;
+        }
+
+        .button {
+            padding: 7px;
+            background-color: rgb(1, 190, 190);
+            color: white;
+            border: none;
+            margin-left: 200px;
+            margin: 5px;
+        }
+
+        #title {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            margin-left: 45%;
+        }
+
+        .buttonbox {
+            margin: 10px;
+            margin-left: 45%;
+            margin-top: 15px;
+
+        }
+
+        .box p {
+            margin-left: 45%;
+        }.uploads{
+            margin-left: 12%;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="box">
+        <div id="title">
+            <h1>Bidder Registration</h1>
+        </div>
+        <div>
+            <form [formGroup]="BidderRegistrationForm" (ngSubmit)="submitForm()" novalidate>
+                <p>Personal Details</p>
+                <div class="form-group">
+                    <label>ID</label>
+                    <input type="number" formControlName="BidderId" class="form-control" maxlength="50">
+                </div>
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" formControlName="BidderName" class="form-control" maxlength="50">
+                </div>
+
+                <div class="form-group">
+                    <label>Contact No</label>
+                    <input type="text" formControlName="BidderPhoneNumber" class="form-control" maxlength="10">
+                </div>
+
+                <div class="form-group">
+                    <label>E-mail Id</label>
+                    <input type="text" formControlName="BidderMailId" class="form-control">
+                </div>
+
+
+               
+
+                <p>Bank Details</p>
+
+
+                <div class="form-group">
+                    <label>Account No</label>
+                    <input type="text" formControlName="BidderBankAccNo" class="form-control">
+                </div>
+
+
+                <div class="form-group">
+                    <label>IFSC Code</label>
+                    <input type="text" formControlName="BidderBankIfsc" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" formControlName="BidderPassword" class="form-control">
+                </div>
+
+
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" formControlName="BidderPassword" class="form-control">
+                </div>
+
+
+
+
+                <div class="uploads">
+                    <p>Document Upload</p>
+                    <label>Aadhaar</label>
+                    <input class="button" type="checkbox" name="aadhar">
+
+                    <label>PAN </label>
+                    <input class="button" type="checkbox" name="pan">
+
+                    <label>Trader License</label>
+                    <input class="button" type="checkbox" name="traderlicence">
 
 
                 </div>
-                <div>
-                    <h1>Bidder Registration</h1>
-                    <form [formGroup]="BidderRegistrationForm" (ngSubmit)="submitForm()" novalidate>
-                        <p>Personal Details</p>
-                        <div class="form-group">
-                            <label>ID</label>
-                            <input type="number" formControlName="BidderId" class="form-control" maxlength="50">
-                        </div>
+                <br>
 
-                        <div class="form-group">
-                            <label>Full Name</label>
-                            <input type="text" formControlName="BidderName" class="form-control" maxlength="50">
-                        </div>
+                <div class="buttonbox">
 
-                        <div class="form-group">
-                            <label>Contact No</label>
-                            <input type="text" formControlName="BidderPhoneNumber" class="form-control" maxlength="10">
-                        </div>
+                    <button class="button" (click)="gotobidderaddress()">Next</button>
+                </div>
+            </form>
+        </div>
 
-                        <div class="form-group">
-                            <label>E-mail Id</label>
-                            <input type="text" formControlName="BidderMailId" class="form-control">
-                        </div>
+    </section>
+</body>
 
-
-                        <p>Address Details</p>
-
-
-                        <div class="form-group">
-                            <label>Address</label>
-                            <input type="text" formControlName="BidderAddress1" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <label>City</label>
-                            <input type="text" formControlName="BidderCity" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <label>State</label>
-                            <input type="text" formControlName="BidderState" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Pin</label>
-                            <input type="number" formControlName="BidderPincode" class="form-control">
-                        </div>
-
-                        <p>Bank Details</p>
-
-
-                        <div class="form-group">
-                            <label>Account No</label>
-                            <input type="text" formControlName="BidderBankAccNo" class="form-control">
-                        </div>
-
-
-                        <div class="form-group">
-                            <label>IFSC Code</label>
-                            <input type="text" formControlName="BidderBankIfsc" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" formControlName="BidderPassword" class="form-control">
-                        </div>
-
-
-                        <div class="form-group">
-                            <label>Confirm Password</label>
-                            <input type="password" formControlName="BidderPassword" class="form-control">
-                        </div>
-
-
-
-
-                        <div>
-                            <p>Document Upload</p>
-                            <label>Aadhaar</label>
-                            <input type="file" name="aadhar">
-
-                            <label>PAN </label>
-                            <input type="file" name="pan">
-
-                            <label>Trader License</label>
-                            <input type="file" name="traderlicence">
-
-
-                        </div>
-                        <br>
-
-
-                        <button type="submit">REGISTER</button>
-                    </form>
-
+</html>

@@ -42,11 +42,12 @@
    
     <form [formGroup] = "insuranceApplicationForm" (ngSubmit)="submitForm()" novalidate>
         <p class = "form-group"><b>Application Details</b></p>
+
             <div class="form-group">
-                <label>PolicyNo</label>
-                <input type="number" formControlName="PolicyNo" class="form-control" maxlength="50" placeholder="please enter policy no">
+                <label>FarmerId</label>
+                <input type="number" class="form-control" value="{{this.insurancefetchvar.length+1}}" readonly>
             </div>
-    
+
             <div class="form-group">
                 <label>FarmerId</label>
                 <input type="number" formControlName="FarmerId" class="form-control" maxlength="10" placeholder="please enter policy no">
@@ -73,21 +74,26 @@
             </div>
 
             <div class="form-group">
-                <label>TotalSumInsured</label>
-                <input type="number" formControlName="TotalSumInsured" class="form-control" >
+                <label>Premium amount</label>
+                <input type="number" class="form-control" value="{{this.premiumamt}}" readonly>
             </div>
     
             <div class="form-group">
-                <label>Status</label>
-                <input type="checkbox" formControlName="Status" class="form-control" >
+                <label>Sum Insured per Hectare</label>
+                <input type="number" class="form-control" value="{{this.suminsuredperhectare}}" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>TotalSumInsured</label>
+                <input type="number" formControlName="TotalSumInsured" class="form-control" >
             </div>
             
             <button class ="button" type="submit"> Calculate</button>
             
     </form>
 
-    <p>The premium amount is {{this.premiumamt}}</p><br>
-    <p>The Sum Insured per Hectare is {{this.suminsuredperhectare}}</p>
+    <!-- <p>The premium amount is {{this.premiumamt}}</p><br>
+    <p>The Sum Insured per Hectare is {{this.suminsuredperhectare}}</p> -->
 
     </section>
 </body>

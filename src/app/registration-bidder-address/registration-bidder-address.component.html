@@ -1,34 +1,89 @@
-<p>registration-bidder-address works!</p>
+<!doctype html>
+<html>
 
+<head>
+    <title>Insurance</title>
+    <meta name="description" content="Insurance">
+    <meta name="keywords" content="html tutorial template">
+    <style>
+        .box {
+            border-style: solid;
+            border-color: rgb(1, 190, 190);
+            border-width: 5px;
+            /* 20px top and bottom, 5px on the sides */
+        }
 
-<p>Bidder Registration</p>
-   <form  [formGroup]="bidderAddressRegistrationForm" (ngSubmit)="submitForm()" novalidate >
-    <p>Personal Details</p>
-    
-        <div class="form-group">
+        .form-group {
+            margin-top: 2%;
+            margin-left: 12%;
+        }
+
+        .button {
+            padding: 7px;
+            background-color: rgb(1, 190, 190);
+            color: white;
+            border: none;
+            margin-left: 200px;
+            margin: 5px;
+        }
+
+        #title {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            margin-left: 20%;
+        }
+
+        .buttonbox {
+            margin: 10px;
+            margin-left: 150px;
+            margin-top: 15px;
+
+        }.box p{
+            margin-left: 12%;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="box">
+        <div id="title">
+            <h1>Bidder Registration</h1>
+        </div>
+
+        <form [formGroup]="bidderAddressRegistrationForm" (ngSubmit)="submitForm()" novalidate>
+            <p>Personal Details</p>
+
+                <div class="form-group">
+                    <label>ID</label>
+                    <input type="number" formControlName="BidderId" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" formControlName="BidderAddress1" class="form-control" maxlength="50" />
+                </div>
+                <div class="form-group">
+                    <label>City Name</label>
+                    <input type="text" formControlName="BidderCity" class="form-control" maxlength="50" />
+                </div>
+                <div class="form-group">
+                    <label>State</label>
+                    <input type="text" formControlName="BidderState" class="form-control" maxlength="50" />
+                </div>
+
             <div class="form-group">
-                <label>ID</label>
-                <input type="number" formControlName="BidderId"   class="form-control" />
-             </div>
-         <div class="form-group">
-            <label>Address</label>
-            <input type="text" formControlName="BidderAddress1"   class="form-control" maxlength="50"/>
-         </div>
-         <div class="form-group">
-            <label>City Name</label>
-            <input type="text" formControlName="BidderCity"   class="form-control" maxlength="50"/>
-         </div>
-         <div class="form-group">
-            <label>State</label>
-            <input type="text" formControlName="BidderState"   class="form-control" maxlength="50"/>
-         </div>
-        </div> 
+                <label>Pincode</label>
+                <input type="text" formControlName="BidderPincode" class="form-control" maxlength="50" />
+            </div>
+            <div class="buttonbox">
 
-        <div class="form-group">
-            <label>Pincode</label>
-            <input type="text" formControlName="BidderPincode"   class="form-control" maxlength="50"/>
-         </div>
-         
-         <button type="submit"> REGISTER</button>
-        
-     </form>
+                <button  class="button"  (click)="gotobidderloginagain()"> REGISTER</button>
+            </div>
+
+        </form>
+
+
+    </section>
+</body>
+
+</html>

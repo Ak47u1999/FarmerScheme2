@@ -1,0 +1,21 @@
+<div>
+    <table border="1" width="100%">
+        <thead>
+            <th>Farmer</th>
+            <th>Transaction status </th>
+            <th>status</th>
+            
+            
+        </thead>
+        <tbody>
+            <tr *ngFor="let s of crops ">
+                
+                <td>{{s.farmerId }}</td>
+                <td>{{s.isTransactionCompleted }}</td>
+                <td><input type="checkbox"></td>
+                   
+            </tr >
+           
+        </tbody>
+    </table>
+</div>

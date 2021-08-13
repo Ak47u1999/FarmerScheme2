@@ -1,11 +1,11 @@
 export interface MarketPlaceTransactions
 {
  
-     TransactionId :number ;
-     RequestId : number ;
-     BidderId : number ;
+     transactionId :number ;
+     requestId : number ;
+     bidderId : number ;
      bidAmount : number;
-     BidDate : number ;
-     BidAdminApprovalStatus : boolean;
+     bidDate : Date ;
+     bidAdminApprovalStatus : boolean;
 
 }

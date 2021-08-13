@@ -1,25 +1,95 @@
-<p>Bidder Login</p>
 
-<div>
-    <form [formGroup]="bidderloginForm" (ngSubmit)="submitForm()" novalidate>
-        <div class="form-group">
-            <label>Username</label>
-            <input type="text" formControlName="Uname" class="form-control" maxlength="50">
-        </div>
-   
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" formControlName="Password" class="form-control" maxlength="50">
-        </div>
 
-        <button type="submit">Login</button>
+
+    <!doctype html>
+    <html>
     
-    </form>
+    <head>
+        <title>Insurance</title>
+        <meta name="description" content="Insurance">
+        <meta name="keywords" content="html tutorial template">
+        <style>
+            .box {
+                border-style: solid;
+                border-color: rgb(1, 190, 190);
+                border-width: 5px;
+                /* 20px top and bottom, 5px on the sides */
+            }
+    
+            .form-group {
+                margin-top: 2%;
+                margin-left: 12%;
+            }
+    
+            .button {
+                padding: 7px;
+                background-color: rgb(1, 190, 190);
+                color: white;
+                border: none;
+                margin-left: 200px;
+                margin: 5px;
+            }
+    
+            #title {
+                display: flex;
+                text-align: center;
+                align-items: center;
+                margin-left: 20%;
+            }
+    
+            .buttonbox {
+                margin: 10px;
+                margin-left: 150px;
+                margin-top: 15px;
+    
+            }.box p{
+                margin-left: 12%;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <section class="box">
+            
+    
+            <p><b>Bidder Login</b></p>
 
-    <div *ngIf="this.val === 1; then thenBlock else elseBlock"></div>
-    <ng-template #thenBlock>
-        <app-bidderwelcomepage></app-bidderwelcomepage>
-    </ng-template>
-    <ng-template #elseBlock>Wrong Password Please Enter correct credentials</ng-template>
+            <div>
+                <form [formGroup]="bidderloginForm" (ngSubmit)="submitForm()" novalidate>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" formControlName="Uname" class="form-control" maxlength="50">
+                    </div>
+               
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" formControlName="Password" class="form-control" maxlength="50">
+                    </div>
+            
+                    <button type="button" (click)="gotoBidderwelcome()">Login</button>
+            
+                    <div>
+                        <p>New Bidder?</p><button type="button" (click)="gotoBidderreg()">Register Here</button>
+                    </div>
+            
+                    
+                
+                </form>
+            
+                <div *ngIf="this.val === 1; then thenBlock else elseBlock"></div>
+                <ng-template #thenBlock>
+                    <app-bidderwelcomepage></app-bidderwelcomepage>
+                </ng-template>
+                <ng-template #elseBlock>Wrong Password Please Enter correct credentials</ng-template>
+            
+            <p>The password is {{this.val}}</p>
+            </div>
+        </section>
+    </body>
+    
+    </html>
+    
+    
+    
+    
 
-<p>The password is {{this.val}}</p>

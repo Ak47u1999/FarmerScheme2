@@ -16,7 +16,7 @@ export class RegistrationFarmerComponent implements OnInit {
   farmerRegistrationForm! : FormGroup;
   farmeridentity! : Farmeridentity;
 
-  constructor(public service :CrudService, public fb :FormBuilder) { }
+  constructor(public service :CrudService, public fb :FormBuilder,private router: Router) { }
 
   ngOnInit(): void {
 
@@ -34,6 +34,8 @@ export class RegistrationFarmerComponent implements OnInit {
      AdminApprovalStatus : [],
     })
   }
+  gotofarmeraddress()
+  { this.router.navigate(['farmeraddress']) }
   
   submitForm() {
     this.service.FarmerIdentityRegistrationFunc(this.farmerRegistrationForm.value).subscribe();

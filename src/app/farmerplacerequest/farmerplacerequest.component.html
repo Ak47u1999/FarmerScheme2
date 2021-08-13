@@ -1,59 +1,110 @@
-<p>farmerplacerequest works!</p>
-<br><br>
-<div id="myme" style="background-image: url('assets/home(1).jpg');background-color: RGBA(15, 5, 20, 0.84);background-attachment: fixed;
- background-repeat: no-repeat; background-size: cover;">
-    <div class="bg-overlay1">
-        <div class="container" style="border: 3px solid black; width: 100%; height:75%;">
-            <br>
-            <br>
-            <br>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="banner-text">
-                        <br><br>
-                        <h2 style="color: #EB233C">What you can do with Scheme for Farmers</h2>
-                        <br><br>
 
-                    </div>
+<!doctype html>
+<html>
 
+<head>
+    <title>Insurance</title>
+    <meta name="description" content="Insurance">
+    <meta name="keywords" content="html tutorial template">
+    <style>
+        .box {
+            border-style: solid;
+            border-color: rgb(1, 190, 190);
+            border-width: 5px;
+            /* 20px top and bottom, 5px on the sides */
+        }
 
+        .form-group {
+            margin-top: 2%;
+            margin-left: 45%;
+        }
+
+        .button {
+            padding: 7px;
+            background-color: rgb(1, 190, 190);
+            color: white;
+            border: none;
+            margin-left: 200px;
+            margin: 5px;
+        }
+
+        #title {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            margin-left: 45%;
+        }
+
+        .buttonbox {
+            margin: 10px;
+            margin-left: 45%;
+            margin-top: 15px;
+
+        }
+
+        .box p {
+            margin-left: 45%;
+        }.uploads{
+            margin-left: 12%;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="box">
+        <div id="title">
+            <h1>View Sold History</h1>
+        </div>
+        
+        <div>
+            <h1>Place sell request</h1>
+            <form [formGroup]="farmerplacerequest" (ngSubmit)="submitForm()" novalidate>
+
+                <div class="form-group">
+                    <label>Request ID</label>
+                    <input type="number" formControlName="requestId" class="form-control"
+                        value="{{this.requestIdpost}}" readonly>
                 </div>
-                <div>
-                    <h1>Place sell request</h1>
-                    <form [formGroup]="farmerplacerequest" (ngSubmit)="submitForm()" novalidate>
-                       
-                        <div class="form-group">
-                            <label>Request ID</label>
-                            <input type="number" formControlName="requestId" class="form-control" >
-                        </div>
-                        <div class="form-group">
-                            <label>Farmer ID</label>
-                            <input type="number" formControlName="farmerId" class="form-control" >
-                        </div>
-                        <div class="form-group">
-                            <label>Crop Name</label>
-                            <input type="text" formControlName="cropName" class="form-control" maxlength="50">
-                        </div>
-                        <div class="form-group">
-                            <label>Crop Type</label>
-                            <input type="text" formControlName="cropType" class="form-control" maxlength="50">
-                        </div>
-                        <div class="form-group">
-                            <label>Fertilizer Type</label>
-                            <input type="text" formControlName="fertilizerType" class="form-control" maxlength="50">
-                        </div>
-                        <div class="form-group">
-                            <label>Quantity</label>
-                            <input type="number" formControlName="quantity" class="form-control" >
-                        </div>
-                        <div class="form-group"> 
-                            <label>Status</label>
-                            <input type="date" formControlName="postedDate" class="form-control">
-                        </div>
-
-                        
-
-                        <button type="submit">Place sell request</button>
-                    </form>
+                <div class="form-group">
+                    <label>Farmer ID</label>
+                    <input type="number" formControlName="farmerId" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Crop Name</label>
+                    <input type="text" formControlName="cropName" class="form-control" maxlength="50">
+                </div>
+                <div class="form-group">
+                    <label>Crop Type</label>
+                    <select formControlName="cropType" class="form-control">
+                        <option value="Kharif">Kharif</option>
+                        <option value="Rabi">Rabi</option>
+                        <option value="Horticulture">Horticulture</option>
+                    </select>
+                    <!-- <input type="text" formControlName="cropType" class="form-control" maxlength="50"> -->
+                </div>
+                <div class="form-group">
+                    <label>Fertilizer Type</label>
+                    <input type="text" formControlName="fertilizerType" class="form-control" maxlength="50">
+                </div>
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input type="number" formControlName="quantity" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Posted Date</label>
+                    <input type="date" formControlName="postedDate" class="form-control">
+                </div>
 
 
+                <button type="submit" >Place sell request</button>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
+
+
+
+
+               

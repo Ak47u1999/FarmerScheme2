@@ -1,42 +1,69 @@
 
 
 
-<div class="main">
-    <div id="form">
-        <form #myform="ngForm">
-            <!-- (ngSubmit)="myform.form.valid && loginuser()" -->
-            <label for="uname"><b>Email id</b></label>
-            <input type="email" id="emailid" name="email" class="inputText" required email />  <!--  [(ngModel)]="login.email" -->
-                <!-- #email="ngModel" /> -->
-            <label for="uname"><b>Password</b></label>
-            <input id="password" type="password" name="pass" class="inputText" required /><!--[(ngModel)]="login.password" -->
-                <!-- #pass="ngModel" /> -->
-
-
-
-                <br>
-
-                <div>
-                    <label for="UserType">Enter User Type: </label><br>
-                    
-                    <!-- [(ngModel)]=login.UserType #UserType="ngModel" -->
-                    <input type="radio" name="UserType" value="Farmer" >Farmer &nbsp;&nbsp;
-                    <!-- [(ngModel)]=login.UserType #UserType="ngModel" -->
-                    <input type="radio" name="UserType" value="Bidder" >Bidder &nbsp;&nbsp;
-                    <!-- [(ngModel)]=login.UserType #UserType="ngModel" -->
-                </div><br>
-                
-            <input type="submit" value="Login" id="submit">
-        </form>
-        <div id="signup"> <a routerLink="FarmerRegistration" >Are you new here? </a> </div>
+    <!doctype html>
+    <html>
     
-       <!--  <div  *ngIf = "myform.form.invalid">
-        <div class="error" *ngIf="email.invalid && (email.dirty || email.touched)">
-            You need to enter an email
-        </div>
-        <div class="error" *ngIf="pass.invalid && (pass.dirty || pass.touched)">
-            Please enter password to login
-        </div>
-    </div>-->
-    </div>
-    </div>
+    <head>
+        <title>Insurance</title>
+        <meta name="description" content="Insurance">
+        <meta name="keywords" content="html tutorial template">
+        <style>
+            .box {
+                border-style: solid;
+                border-color: rgb(1, 190, 190);
+                border-width: 5px;
+                /* 20px top and bottom, 5px on the sides */
+            }
+    
+            .form-group {
+                margin-top: 2%;
+                margin-left: 12%;
+            }
+    
+            .button {
+                padding: 7px;
+                background-color: rgb(1, 190, 190);
+                color: white;
+                border: none;
+                margin-left: 200px;
+                margin: 5px;
+            }
+    
+            #title {
+                display: flex;
+                text-align: center;
+                align-items: center;
+                margin-left: 20%;
+            }
+    
+            .buttonbox {
+                margin: 10px;
+                margin-left: 150px;
+                margin-top: 15px;
+    
+            }.box p{
+                margin-left: 12%;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <section class="box">
+            
+    
+            <h1>Login as </h1>
+
+    <button type="button" (click)="gotoFarmerlogin()">FARMER</button>
+    <button type="button" (click)="gotoBidderlogin()">Bidder</button>
+    <button type="button" (click)="gotoexit()">EXIT</button>
+    
+    
+        </section>
+    </body>
+    
+    </html>
+    
+    
+    
+    

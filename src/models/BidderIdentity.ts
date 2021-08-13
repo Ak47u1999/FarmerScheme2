@@ -1,8 +1,8 @@
 export interface BidderIdentity
 {
  
-     BidderId : number ;
-     BidderName :string ;
+     bidderId : number ;
+     bidderName :string ;
      BidderPhoneNumber :string ;
      BidderMailId : string ;
      BidderBankAccNo : string ;

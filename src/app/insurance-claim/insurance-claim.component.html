@@ -70,22 +70,16 @@
                     <div class="form-group">
                         <label>CauseOfLoss</label>
                         <input type="text" formControlName="CauseOfLoss" class="form-control" placeholder="Cause Of Loss">
-                    </div>
-                    
-                     
+                    </div>                 
             
                     <div class="form-group">
                         <label>DateOfLoss</label>
                         <input type="date" formControlName="DateOfLoss" class="form-control" >
                     </div>
         
-                    <div class="form-group">
-                        <label>ClaimStatus</label>
-                        <input type="checkbox" formControlName="ClaimStatus" class="form-control" >
-                    </div>
                     <div class="buttonbox">
                     
-                        <button class="button" type="submit">Submit</button>
+                        <button class="button" type="submit" (click)="gotofarmerwelcome()">Submit</button>
 
                     </div>
             </form>

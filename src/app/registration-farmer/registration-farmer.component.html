@@ -1,52 +1,57 @@
+<!doctype html>
+<html>
 
-<br><br>
-<div id="myme" style="background-image: url('assets/home(1).jpg');background-color: RGBA(15, 5, 20, 0.84);background-attachment: fixed;
- background-repeat: no-repeat; background-size: cover;">
-    <div class="bg-overlay1">
-        <div class="container" style="border: 3px solid black; width: 100%; height:75%;">
-            <br>
-            <br>
-            <br>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="banner-text">
-                        <br><br>
-                        <h2 style="color: #EB233C" >What you can do with AgriFarm</h2>
-                        <br><br>
-                        <ul style="color: white;padding-left: 30px;">&nbsp;&nbsp;
-                            <li style="font-size: 30px;">
-                                <h3 > Enroll Yourself on the AgroService to sell crops!</h3>
-                                    
-                            </li>
-                            <li style="font-size: 30px; ">
-                                <h3 > Register Yourself with all given credentials
-                                    as part
-                                    of the registration process.</h3>
-                            </li>
-                            <li style="font-size: 30px; " >
-                                <h3 > After Logging in, You are allowed to sell your desired Crops
-                                </h3>
-                            </li>
-                            <li style="font-size: 30px; ">
-                                <h3 > After Logging in, You will be able to see all the bidders who
-                                    are bidding on your crop.
-                                </h3>
-                            </li>
-                            <li style="font-size: 30px; ">
-                                <h3>After Logging in, You can avail insurance once.
-                                </h3>
-                            </li>
+<head>
+    <title>Insurance</title>
+    <meta name="description" content="Insurance">
+    <meta name="keywords" content="html tutorial template">
+    <style>
+        .box {
+            border-style: solid;
+            border-color: rgb(1, 190, 190);
+            border-width: 5px;
+            /* 20px top and bottom, 5px on the sides */
+        }
 
-                            <li style="font-size: 30px; ">
-                                <h3> Sell it! To get high returns!</h3>
-                            </li>
-                        </ul>
-                    </div>
+        .form-group {
+            margin-top: 2%;
+            margin-left: 12%;
+        }
 
+        .button {
+            padding: 7px;
+            background-color: rgb(1, 190, 190);
+            color: white;
+            border: none;
+            margin-left: 200px;
+            margin: 5px;
+        }
 
-                </div>
+        #title {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            margin-left: 20%;
+        }
 
-<p>Farmer Registration</p>
+        .buttonbox {
+            margin: 10px;
+            margin-left: 150px;
+            margin-top: 15px;
+
+        }.box p{
+            margin-left: 12%;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="box">
+        <div id="title">
+            <h1>Farmer Registration</h1>
+        </div>
+
+        <p>Farmer Registration</p>
    <form  [formGroup]="farmerRegistrationForm" (ngSubmit)="submitForm()" novalidate >
     <p>Personal Details</p>
     
@@ -105,9 +110,24 @@
             <input type="checkbox" formControlName="AdminApprovalStatus"   class="form-control"/>
          </div>
         
-         <button type="submit"> REGISTER</button>
+         <div class="buttonbox">
+
+            <button class="button" (click)="gotofarmeraddress()">Next</button>
+        </div>
+
+         <!-- <button type="submit"> REGISTER</button> -->
         
      </form>
+
+
+    </section>
+</body>
+
+</html>
+    
+
+
+
 
          
          

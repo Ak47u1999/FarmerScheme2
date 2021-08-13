@@ -1,0 +1,20 @@
+<div>
+    <table border="1" width="100%">
+        <thead>
+            <th>Farmer</th>
+            <th>farmer name </th>
+            <th>status</th>
+            
+            
+        </thead>
+        <tbody>
+            <tr *ngFor="let s of farmers ">
+                
+                <td>{{s.farmerId }}</td>
+                <td>{{s.farmerName }}</td>
+                <td><input type="checkbox"> </td>                   
+            </tr >
+           
+        </tbody>
+    </table>
+</div>

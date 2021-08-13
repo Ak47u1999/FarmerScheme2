@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Loginfeildfarmer } from 'src/models/Loginfeildfarmer';
 import { CrudService } from '../services/crud.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-bidder',
@@ -14,7 +15,7 @@ export class LoginBidderComponent implements OnInit {
   LoginBidder !: Loginfeildfarmer;
   val : number =0;
 
-  constructor(public service:CrudService, public fb :FormBuilder) { }
+  constructor(public service:CrudService, public fb :FormBuilder,private router: Router) { }
 
   ngOnInit(): void {
 
@@ -24,6 +25,14 @@ export class LoginBidderComponent implements OnInit {
       })
   }
 
+  gotoBidderwelcome()
+  { 
+    this.router.navigate(['bidderwelcome'])
+  }
+  gotoBidderreg()
+  { 
+    this.router.navigate(['BidderRegistration'])
+  }
   submitForm(){
 
     this.bidderloginForm.value.isValid = false;

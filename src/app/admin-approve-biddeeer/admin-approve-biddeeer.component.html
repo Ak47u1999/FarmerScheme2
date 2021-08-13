@@ -1,0 +1,20 @@
+
+<div>
+    <table border="1" width="100%">
+        <thead>
+            <th>Bidder Id</th>
+            <th>Bidder Name </th>
+            <th>Status</th>
+            
+            
+        </thead>
+        <tbody>
+            <tr *ngFor="let s of bidders ">
+                <td>{{s.bidderId }}</td>
+                <td>{{s.bidderName }}</td>
+                <td><input type="checkbox"> </td>                   
+            </tr >
+           
+        </tbody>
+    </table>
+</div>

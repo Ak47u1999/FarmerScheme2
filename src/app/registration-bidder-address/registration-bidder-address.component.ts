@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BidderAddress } from 'src/models/BidderAddress';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CrudService } from '../services/crud.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration-bidder-address',
@@ -13,7 +14,7 @@ export class RegistrationBidderAddressComponent implements OnInit {
   bidderAddressRegistrationForm! : FormGroup;
   bidderaddress! : BidderAddress;
 
-  constructor(public service :CrudService, public fb :FormBuilder) { }
+  constructor(public service :CrudService, public fb :FormBuilder,private router: Router) { }
 
   ngOnInit(): void {
     this.bidderAddressRegistrationForm = this.fb.group({
@@ -23,9 +24,12 @@ export class RegistrationBidderAddressComponent implements OnInit {
      BidderState :[],
      BidderPincode : [],
     })
+    
 
 
   }
+  gotobidderloginagain()
+  {  this.router.navigate(['BidderLogin']) }
   submitForm(){
 
     this.service.BidderAddressRegistrationFunc(this.bidderAddressRegistrationForm.value).subscribe();
@@ -33,3 +37,4 @@ export class RegistrationBidderAddressComponent implements OnInit {
   }
 
 }
+

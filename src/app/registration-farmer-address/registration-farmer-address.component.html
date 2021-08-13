@@ -1,10 +1,62 @@
-<p>registration-farmer-address works!</p>
+<!doctype html>
+<html>
 
-<p>Farmer Registration</p>
+<head>
+    <title>Insurance</title>
+    <meta name="description" content="Insurance">
+    <meta name="keywords" content="html tutorial template">
+    <style>
+        .box {
+            border-style: solid;
+            border-color: rgb(1, 190, 190);
+            border-width: 5px;
+            /* 20px top and bottom, 5px on the sides */
+        }
+
+        .form-group {
+            margin-top: 2%;
+            margin-left: 45%;
+        }
+
+        .button {
+            padding: 7px;
+            background-color: rgb(1, 190, 190);
+            color: white;
+            border: none;
+            margin-left: 200px;
+            margin: 5px;
+        }
+
+        #title {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            margin-left: 45%;
+        }
+
+        .buttonbox {
+            margin: 10px;
+            margin-left: 45%;
+            margin-top: 15px;
+
+        }
+
+        .box p {
+            margin-left: 45%;
+        }.uploads{
+            margin-left: 12%;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="box">
+        <div id="title">
+            <h1>Farmer Registration</h1>
+        </div>
    <form  [formGroup]="farmerAddressRegistrationForm" (ngSubmit)="submitForm()" novalidate >
     <p>Personal Details</p>
     
-        <div class="form-group">
             <div class="form-group">
                 <label>ID</label>
                 <input type="number" formControlName="FarmerId"   class="form-control" />
@@ -21,9 +73,9 @@
             <label>State</label>
             <input type="text" formControlName="FarmerState"   class="form-control" maxlength="50"/>
          </div>
-        </div> 
+       
 
-        <p>Crop Details</p>
+        <p>Land Details</p>
         <div class="form-group">
             <label>Pincode</label>
             <input type="text" formControlName="FarmerPincode"   class="form-control" maxlength="50"/>
@@ -37,7 +89,15 @@
             <label>Land Address Pin Code</label>
             <input type="text" formControlName="FarmerLandAddressPinCode"   class="form-control" maxlength="50"/>
          </div>
-         <button type="submit"> REGISTER</button>
+         <div class="buttonbox">
+
+             <button  class="button" (click)="gotofarmerloginagain()"> REGISTER</button>
+            </div>
         
      </form>
+
+    </section>
+</body>
+
+</html>
 

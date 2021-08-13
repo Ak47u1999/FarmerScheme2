@@ -30,6 +30,9 @@ export class CrudService {
   FarmerIdentityRegistrationFunc(farmeridentity : any): Observable<Farmeridentity> {
     return this.httpClient.post<Farmeridentity>(this.ApiUrl + '/Farmeridentities/', JSON.stringify(farmeridentity), this.httpOptions)    
   } 
+  FarmerIdentityFetchFunc(): Observable<Farmeridentity []> {
+    return this.httpClient.get<Farmeridentity []>(this.ApiUrl + '/Farmeridentities/')    
+  } 
   FarmerAddressRegistrationFunc(farmeraddress : any): Observable<FarmerAddress> {
     return this.httpClient.post<FarmerAddress>(this.ApiUrl + '/FarmerAddresses/', JSON.stringify(farmeraddress), this.httpOptions)    
   } 
@@ -41,6 +44,9 @@ export class CrudService {
     return this.httpClient.post<BidderAddress>(this.ApiUrl + '/BidderAddresses/', JSON.stringify(bidderaddress), this.httpOptions)    
   } 
 
+  InsuranceApplicationFetchFunc(): Observable<InsuranceApplication []> {
+    return this.httpClient.get<InsuranceApplication []>(this.ApiUrl + '/InsuranceApplications/',)    
+  } 
   InsuranceApplicationFunc(insuranceapplication : any): Observable<InsuranceApplication> {
     return this.httpClient.post<InsuranceApplication>(this.ApiUrl + '/InsuranceApplications/', JSON.stringify(insuranceapplication), this.httpOptions)    
   } 
@@ -68,7 +74,23 @@ export class CrudService {
   return this.httpClient.get<MarketPlaceTransactions[]>(this.ApiUrl + '/MarketPlaceTransactions/')
   
   }
-  FarmerPlaceRequestFunc(farmerplacerequest : any): Observable<number> {
-    return this.httpClient.post<number>(this.ApiUrl + '/Marketplacecrops/', JSON.stringify(farmerplacerequest), this.httpOptions)    
-  } 
+  FarmerPlaceRequestFunc(farmerplacerequest : any): Observable<MarketplaceCrops[]> {
+    return this.httpClient.post<MarketplaceCrops[]>(this.ApiUrl + '/Marketplacecrops/', JSON.stringify(farmerplacerequest), this.httpOptions)    
+  }
+  FarmerFetchRequestFunc(): Observable<MarketplaceCrops[]> {
+    return this.httpClient.get<MarketplaceCrops[]>(this.ApiUrl + '/Marketplacecrops/')    
+  }
+  BidderBidPostFunc(bidderposthisbid : any): Observable<number> {
+    return this.httpClient.post<number>(this.ApiUrl + '/Marketplacetransactions/', JSON.stringify(bidderposthisbid), this.httpOptions)    
+  }
+  
+  fetchfarmer(): Observable<Farmeridentity[]> {
+    return this.httpClient.get<Farmeridentity[]>(this.ApiUrl + '/Farmeridentities/')    
+  }
+  fetchbidder(): Observable<BidderIdentity[]> {
+    return this.httpClient.get<BidderIdentity[]>(this.ApiUrl + '/Bidderidentities/')    
+  }
+  fetchtransaction(): Observable<MarketPlaceTransactions[]> {
+    return this.httpClient.get<MarketPlaceTransactions[]>(this.ApiUrl + '/Marketplacetransactions/')    
+  }
 }

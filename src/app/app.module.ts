@@ -27,6 +27,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SellhistoryComponent } from './sellhistory/sellhistory.component';
 import { FarmerplacerequestComponent } from './farmerplacerequest/farmerplacerequest.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminApproveFarmerComponent } from './admin-approve-farmer/admin-approve-farmer.component';
+import { AdminApproveBiddeeerComponent } from './admin-approve-biddeeer/admin-approve-biddeeer.component';
+import { AdminApproveCropsComponent } from './admin-approve-crops/admin-approve-crops.component';
+import { AdminApproveTransactionComponent } from './admin-approve-transaction/admin-approve-transaction.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +57,12 @@ import { FarmerplacerequestComponent } from './farmerplacerequest/farmerplacereq
     NavbarComponent,
     FooterComponent,
     SellhistoryComponent,
-    FarmerplacerequestComponent
+    FarmerplacerequestComponent,
+    AdminHomeComponent,
+    AdminApproveFarmerComponent,
+    AdminApproveBiddeeerComponent,
+    AdminApproveCropsComponent,
+    AdminApproveTransactionComponent
   ],
   imports: [
     BrowserModule,

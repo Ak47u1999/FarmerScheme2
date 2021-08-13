@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FarmerAddress } from 'src/models/FarmerAddress';
 import { CrudService } from '../services/crud.service';
 
@@ -14,7 +15,7 @@ export class RegistrationFarmerAddressComponent implements OnInit {
   farmerAddressRegistrationForm! : FormGroup;
   farmeraddress! : FarmerAddress;
 
-  constructor(public service :CrudService, public fb :FormBuilder) { }
+  constructor(public service :CrudService, public fb :FormBuilder,private router: Router) { }
 
   ngOnInit(): void {
 
@@ -28,6 +29,8 @@ export class RegistrationFarmerAddressComponent implements OnInit {
      FarmerLandAddressPinCode : []
     })
   }
+  gotofarmerloginagain()
+  {  this.router.navigate(['FarmerLogin']) }
 
   submitForm() {
     this.service.FarmerAddressRegistrationFunc(this.farmerAddressRegistrationForm.value).subscribe();
