@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class RegistrationBidderComponent implements OnInit {
   BidderRegistrationForm!: FormGroup;
   bidder!:BidderIdentity;
+  bidderidentityfetchvar : BidderIdentity [] = [];
 
   constructor(public service:CrudService, public fb :FormBuilder,private router: Router) { }
 
@@ -30,12 +31,17 @@ export class RegistrationBidderComponent implements OnInit {
     BidderPassword : [],
     BidderAdminApprovalStatus : [],
     })
+
+    this.service.BidderIdentityFetchFunc().subscribe((data : BidderIdentity[]) => {this.bidderidentityfetchvar=data})
   }
   gotobidderaddress()
   {  this.router.navigate(['bidderaddress']) }
 
   submitForm() {
+
+    this.BidderRegistrationForm.value.BidderId=this.bidderidentityfetchvar.length+1;
     this.service.BidderRegistrationFunc(this.BidderRegistrationForm.value).subscribe();
+    this.gotobidderaddress();
   }
 
 }

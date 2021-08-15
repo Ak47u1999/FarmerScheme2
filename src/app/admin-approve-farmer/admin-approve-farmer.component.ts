@@ -23,5 +23,9 @@ export class AdminApproveFarmerComponent implements OnInit {
       
     });
   }
+  gotoadminhome()
+  { 
+    this.router.navigate(['admin'])
+  }
 
 }

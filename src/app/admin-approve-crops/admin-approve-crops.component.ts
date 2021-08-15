@@ -34,4 +34,8 @@ export class AdminApproveCropsComponent implements OnInit {
     });
   }
 
+  gotoadminhome()
+  { 
+    this.router.navigate(['admin'])
+  }
 }

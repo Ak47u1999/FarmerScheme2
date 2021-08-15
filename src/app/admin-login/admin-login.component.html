@@ -1,4 +1,6 @@
-<!-- <!doctype html>
+<!--  
+
+<!doctype html>
 <html>
 
 <head>
@@ -39,9 +41,7 @@
             margin-left: 150px;
             margin-top: 15px;
 
-        }
-
-        .box p {
+        }.box p{
             margin-left: 12%;
         }
     </style>
@@ -49,38 +49,35 @@
 
 <body>
     <section class="box">
-        <div id="title">
-            <h1>Farmer Login</h1>
-        </div>
+        
 
-        <p>Farmer Login</p>
+        <p><b>Admin Login</b></p>
 
         <div>
-            <form [formGroup]="loginfarmerform" (ngSubmit)="submitForm()" novalidate>
+            <form [formGroup]="adminloginForm" (ngSubmit)="submitForm()" novalidate>
                 <div class="form-group">
                     <label>Username</label>
                     <input type="text" formControlName="Uname" class="form-control" maxlength="50">
                 </div>
-
+           
                 <div class="form-group">
                     <label>Password</label>
                     <input type="password" formControlName="Password" class="form-control" maxlength="50">
                 </div>
-
-                <button type="submit">Login</button>
-
-                <div>
-                    <p>New User?</p><button type="button" (click)="gotoFarmerreg()">Register Here</button>
-                </div>
+        
+                <button type="button" (click)="gotoadminhome()">Login</button>
+        
+                
+            
             </form>
-
-            <!-- <p>The password is {{this.val}}</p>
-
+        
         </div>
     </section>
 </body>
 
-</html> -->
+</html>
+
+ -->
 
 
 
@@ -88,6 +85,38 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+ <!DOCTYPE html>
+ <!--www.codingflicks.com
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <title>Transparent Login Form HTML CSS</title>
+     
+ </head>
+ <body>
+     <div class="form-box">
+         <div class="header-text">
+             Login Form
+         </div><input placeholder="Your Email Address" type="text"> <input placeholder="Your Password" type="password"> <input id="terms" type="checkbox"> <label for="terms"></label><span>Agree with <a href="#">Terms & Conditions</a></span> <button>login</button>
+     </div>
+ </body>
+ </html>
+
+
+ -->
 
 
 
@@ -100,27 +129,27 @@
 
 
 <!DOCTYPE html>
-
+<!-- Created By CodingNepal -->
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
-      <title>Farmer Login</title>
+      <title>Transparent Login Form HTML CSS</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
       
    </head>
    <body>
       <div class="bg-img">
          <div class="content">
-            <header>Farmer Login</header>
-            <form  [formGroup]="loginfarmerform" (ngSubmit)="submitForm()" novalidate action="#">
+            <header>Login Form</header>
+            <form action="#">
                <div class="field">
                   <span class="fa fa-user"></span>
-                  <input type="text" formControlName="Uname" class="form-control" maxlength="50" required placeholder="Email">
+                  <input type="text" required placeholder="Email or Phone">
                </div>
                <div class="field space">
                   <span class="fa fa-lock"></span>
-                  <input type="password"  formControlName="Password" class="form-control" maxlength="50" class="pass-key" required placeholder="Password">
-                  <!-- <span class="show">SHOW</span> -->
+                  <input type="password" class="pass-key" required placeholder="Password">
+                  <span class="show">SHOW</span>
                </div>
                <div class="pass">
                   <a href="#">Forgot Password?</a>
@@ -129,16 +158,47 @@
                   <input type="submit" value="LOGIN">
                </div>
             </form>
-          <br>
+           <!--  <div class="login">
+               Or login with
+            </div> -->
+           <!--  <div class="links">
+               <div class="facebook">
+                  <i class="fab fa-facebook-f"><span>Facebook</span></i>
+               </div>
+               <div class="instagram">
+                  <i class="fab fa-instagram"><span>Instagram</span></i>
+               </div>
+            </div> -->
+            <br>
             <div class="signup">
                Don't have account?
-               <a href="FarmerRegistration">Signup Now</a>
+               <a href="#">Signup Now</a>
             </div>
          </div>
       </div>
-     
+     <!--  <script>
+         const pass_field = document.querySelector('.pass-key');
+         const showBtn = document.querySelector('.show');
+         showBtn.addEventListener('click', function(){
+          if(pass_field.type === "password"){
+            pass_field.type = "text";
+            showBtn.textContent = "HIDE";
+            showBtn.style.color = "#3498db";
+          }else{
+            pass_field.type = "password";
+            showBtn.textContent = "SHOW";
+            showBtn.style.color = "#222";
+          }
+         });
+      </script> -->
    </body>
 </html>
  
+
+
+
+
+
+
 
 

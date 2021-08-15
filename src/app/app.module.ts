@@ -32,6 +32,7 @@ import { AdminApproveFarmerComponent } from './admin-approve-farmer/admin-approv
 import { AdminApproveBiddeeerComponent } from './admin-approve-biddeeer/admin-approve-biddeeer.component';
 import { AdminApproveCropsComponent } from './admin-approve-crops/admin-approve-crops.component';
 import { AdminApproveTransactionComponent } from './admin-approve-transaction/admin-approve-transaction.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { AdminApproveTransactionComponent } from './admin-approve-transaction/ad
     AdminApproveFarmerComponent,
     AdminApproveBiddeeerComponent,
     AdminApproveCropsComponent,
-    AdminApproveTransactionComponent
+    AdminApproveTransactionComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,

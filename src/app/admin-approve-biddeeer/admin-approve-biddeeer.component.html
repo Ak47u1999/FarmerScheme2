@@ -1,9 +1,26 @@
-
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
 <div>
     <table border="1" width="100%">
         <thead>
             <th>Bidder Id</th>
             <th>Bidder Name </th>
+            <th>Document status</th>
             <th>Status</th>
             
             
@@ -12,9 +29,11 @@
             <tr *ngFor="let s of bidders ">
                 <td>{{s.bidderId }}</td>
                 <td>{{s.bidderName }}</td>
+                <td>{{s.bidderDocumentStatus}}</td>
                 <td><input type="checkbox"> </td>                   
             </tr >
            
         </tbody>
     </table>
+    <button type="button" (click)="gotoadminhome()">Back</button>
 </div>

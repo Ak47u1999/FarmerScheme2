@@ -1,56 +1,75 @@
-<!doctype html>
-<html>
-
-<head>
-    <title>Insurance</title>
-    <meta name="description" content="Insurance">
-    <meta name="keywords" content="html tutorial template">
-    <style>
-        .box {
-            border-style: solid;
-            border-color: rgb(1, 190, 190);
-            border-width: 5px;
-            /* 20px top and bottom, 5px on the sides */
-        }
-        .form-group {
-            margin-top: 2%;
-            margin-left: 12%;
-        }
-        .button {
-            padding: 7px;
-            background-color: rgb(1, 190, 190);
-            color: white;
-            border: none;
-            margin-left: 200px;
-            margin: 5px;
-        }
-        #title{
-            display: flex;
-            text-align: center;
-            align-items: center;
-            margin-left: 20%;
-        }
-    </style>
-</head>
-
-<body>
-    <section class="box">
-        <div id="title">
-            <h1>Insurance application</h1>
-        </div>
+<style>
+    input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type=number], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type=date], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    input[type=submit] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+    
+    div {
+      border-radius: 5px;
+      background-color: white;
+      padding: 20px;
+    }
+    .box
+    {
+        padding-left: 400px;
+        padding-right: 400px;
+        padding-top:100px;
+        padding-bottom: 100px;
         
-   
+    }
+    </style>
+    
+        
+   <div class="box">
     <form [formGroup] = "insuranceApplicationForm" (ngSubmit)="submitForm()" novalidate>
         <p class = "form-group"><b>Application Details</b></p>
 
             <div class="form-group">
-                <label>FarmerId</label>
+                <label>Insurance Application Number</label>
                 <input type="number" class="form-control" value="{{this.insurancefetchvar.length+1}}" readonly>
             </div>
 
             <div class="form-group">
                 <label>FarmerId</label>
-                <input type="number" formControlName="FarmerId" class="form-control" maxlength="10" placeholder="please enter policy no">
+                <input type="number" formControlName="FarmerId" class="form-control" maxlength="10" placeholder="please enter FarmerId">
             </div>
     
             <div class="form-group">
@@ -74,6 +93,13 @@
             </div>
 
             <div class="form-group">
+                <label>Total Sum to be assured</label>
+                <input type="number" formControlName="TotalSumInsured" class="form-control" placeholder="please enter total sum to be assured">
+            </div>
+            
+            <button class ="button" type="submit" > Calculate</button>
+            
+            <div class="form-group">
                 <label>Premium amount</label>
                 <input type="number" class="form-control" value="{{this.premiumamt}}" readonly>
             </div>
@@ -82,20 +108,9 @@
                 <label>Sum Insured per Hectare</label>
                 <input type="number" class="form-control" value="{{this.suminsuredperhectare}}" readonly>
             </div>
-
-            <div class="form-group">
-                <label>TotalSumInsured</label>
-                <input type="number" formControlName="TotalSumInsured" class="form-control" >
-            </div>
-            
-            <button class ="button" type="submit"> Calculate</button>
-            
     </form>
-
+</div>
     <!-- <p>The premium amount is {{this.premiumamt}}</p><br>
     <p>The Sum Insured per Hectare is {{this.suminsuredperhectare}}</p> -->
 
-    </section>
-</body>
-
-</html>
+    

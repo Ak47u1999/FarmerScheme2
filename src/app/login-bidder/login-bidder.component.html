@@ -1,7 +1,4 @@
-
-
-
-    <!doctype html>
+<!-- <!doctype html>
     <html>
     
     <head>
@@ -58,38 +55,106 @@
                 <form [formGroup]="bidderloginForm" (ngSubmit)="submitForm()" novalidate>
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" formControlName="Uname" class="form-control" maxlength="50">
+                        <input type="text" formControlName="Uname" class="form-control" maxlength="50" required>
                     </div>
                
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" formControlName="Password" class="form-control" maxlength="50">
+                        <input type="password" formControlName="Password" class="form-control" maxlength="50" required>
                     </div>
             
-                    <button type="button" (click)="gotoBidderwelcome()">Login</button>
+                    <button type="submit">Login</button>
             
                     <div>
                         <p>New Bidder?</p><button type="button" (click)="gotoBidderreg()">Register Here</button>
                     </div>
             
-                    
-                
                 </form>
             
-                <div *ngIf="this.val === 1; then thenBlock else elseBlock"></div>
-                <ng-template #thenBlock>
-                    <app-bidderwelcomepage></app-bidderwelcomepage>
-                </ng-template>
-                <ng-template #elseBlock>Wrong Password Please Enter correct credentials</ng-template>
-            
-            <p>The password is {{this.val}}</p>
+            <!-- <p>The password is {{this.val}}</p> 
             </div>
         </section>
     </body>
     
     </html>
     
+     -->
+
+
+
+
+     <!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Bidder Login</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      
+   </head>
+   <body>
+      <div class="bg-img">
+         <div class="content">
+            <header>Bidder Login</header>
+            <form [formGroup]="bidderloginForm" (ngSubmit)="submitForm()" novalidate action="#">
+               <div class="field">
+                  <span class="fa fa-user"></span>
+                  <input type="text" formControlName="Uname" class="form-control" maxlength="50" required placeholder="Email">
+               </div>
+               <div class="field space">
+                  <span class="fa fa-lock"></span>
+                  <input type="password" formControlName="Password" class="form-control" maxlength="50"  class="pass-key" required placeholder="Password">
+                  <!-- <span class="show">SHOW</span> -->
+               </div>
+               <div class="pass">
+                  <a href="#">Forgot Password?</a>
+               </div>
+               <div class="field">
+                  <input type="submit" value="LOGIN">
+               </div>
+            </form>
+           <!--  <div class="login">
+               Or login with
+            </div> -->
+           <!--  <div class="links">
+               <div class="facebook">
+                  <i class="fab fa-facebook-f"><span>Facebook</span></i>
+               </div>
+               <div class="instagram">
+                  <i class="fab fa-instagram"><span>Instagram</span></i>
+               </div>
+            </div> -->
+            <br>
+            <div class="signup">
+               Don't have account?
+               <a href="BidderRegistration">Signup Now</a>
+            </div>
+         </div>
+      </div>
+     <!--  <script>
+         const pass_field = document.querySelector('.pass-key');
+         const showBtn = document.querySelector('.show');
+         showBtn.addEventListener('click', function(){
+          if(pass_field.type === "password"){
+            pass_field.type = "text";
+            showBtn.textContent = "HIDE";
+            showBtn.style.color = "#3498db";
+          }else{
+            pass_field.type = "password";
+            showBtn.textContent = "SHOW";
+            showBtn.style.color = "#222";
+          }
+         });
+      </script> -->
+   </body>
+</html>
+ 
     
     
-    
+
+
+
+
+
+
 

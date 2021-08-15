@@ -1,62 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
 <head>
-    <title>Insurance</title>
-    <meta name="description" content="Insurance">
-    <meta name="keywords" content="html tutorial template">
-    <style>
-        .box {
-            border-style: solid;
-            border-color: rgb(1, 190, 190);
-            border-width: 5px;
-            /* 20px top and bottom, 5px on the sides */
-        }
-
-        .form-group {
-            margin-top: 2%;
-            margin-left: 12%;
-        }
-
-        .button {
-            padding: 7px;
-            background-color: rgb(1, 190, 190);
-            color: white;
-            border: none;
-            margin-left: 200px;
-            margin: 5px;
-        }
-
-        #title {
-            display: flex;
-            text-align: center;
-            align-items: center;
-            margin-left: 20%;
-        }
-
-        .buttonbox {
-            margin: 10px;
-            margin-left: 150px;
-            margin-top: 15px;
-
-        }.box p{
-            margin-left: 12%;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color:whitesmoke;
+      padding: 100px 400px 100px 400px;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Add padding to containers */
+    .container {
+      padding: 16px;
+      background-color: white;
+    }
+    
+    /* Full-width input fields */
+    input[type=text], input[type=password],input[type=number] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+    
+    input[type=text]:focus, input[type=password]:focus,input[type=number]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    
+    /* Overwrite default styles of hr */
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+    
+    /* Set a style for the submit button */
+    .registerbtn {
+      background-color: #2691d9;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+    
+    .registerbtn:hover {
+      opacity: 1;
+    }
+    
+    /* Add a blue text color to links */
+    a {
+      color: dodgerblue;
+    }
+    
+    /* Set a grey background color and center the text of the "sign in" section */
+    .signin {
+      background-color: #f1f1f1;
+      text-align: center;
+    }
+    body{
+  background-image:  url('assets/about(1).jpeg');}
     </style>
-</head>
-
-<body>
-    <section class="box">
-        <div id="title">
-            <h1>Bidder Registration</h1>
-        </div>
+    </head>
+    <body>
+       
+     
 
         <form [formGroup]="bidderAddressRegistrationForm" (ngSubmit)="submitForm()" novalidate>
+            <div class="container">
             <p>Personal Details</p>
 
                 <div class="form-group">
                     <label>ID</label>
-                    <input type="number" formControlName="BidderId" class="form-control" />
+                    <input type="number" formControlName="BidderId" class="form-control" value="{{this.bidderidentityfetchvar.length+1}}" readonly/>
                 </div>
                 <div class="form-group">
                     <label>Address</label>
@@ -77,13 +101,10 @@
             </div>
             <div class="buttonbox">
 
-                <button  class="button"  (click)="gotobidderloginagain()"> REGISTER</button>
-            </div>
+                <button  class="button"class="registerbtn"> REGISTER</button>
+            </div></div>
 
-        </form>
+</form>
 
-
-    </section>
 </body>
-
 </html>

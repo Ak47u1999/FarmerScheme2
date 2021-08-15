@@ -25,6 +25,7 @@ import { RegistrationFarmerAddressComponent } from './registration-farmer-addres
 import { RegistrationFarmerComponent } from './registration-farmer/registration-farmer.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SellhistoryComponent } from './sellhistory/sellhistory.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 
 
@@ -54,10 +55,8 @@ const routes: Routes = [
   {path:'farmerapprove',component:AdminApproveFarmerComponent },
   {path:'bidderapprove',component: AdminApproveBiddeeerComponent},
   {path:'transactionapprove',component: AdminApproveTransactionComponent},
-  {path:'requestapprove',component:AdminApproveCropsComponent }
-
-
-
+  {path:'requestapprove',component:AdminApproveCropsComponent },
+  {path:'adminlogin',component:AdminLoginComponent }
 
 ];
 

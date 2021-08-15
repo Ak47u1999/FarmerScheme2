@@ -40,6 +40,9 @@ export class CrudService {
   BidderRegistrationFunc(bidderidentity : any): Observable<BidderIdentity> {
     return this.httpClient.post<BidderIdentity>(this.ApiUrl + '/BidderIdentities/', JSON.stringify(bidderidentity), this.httpOptions)    
   } 
+  BidderIdentityFetchFunc(): Observable<BidderIdentity[]> {
+    return this.httpClient.get<BidderIdentity[]>(this.ApiUrl + '/BidderIdentities/')    
+  } 
   BidderAddressRegistrationFunc(bidderaddress : any): Observable<BidderAddress> {
     return this.httpClient.post<BidderAddress>(this.ApiUrl + '/BidderAddresses/', JSON.stringify(bidderaddress), this.httpOptions)    
   } 
@@ -50,8 +53,12 @@ export class CrudService {
   InsuranceApplicationFunc(insuranceapplication : any): Observable<InsuranceApplication> {
     return this.httpClient.post<InsuranceApplication>(this.ApiUrl + '/InsuranceApplications/', JSON.stringify(insuranceapplication), this.httpOptions)    
   } 
+
   InsuranceClaimFunc(insuranceclaimapplication : any): Observable<InsuranceClaim> {
     return this.httpClient.post<InsuranceClaim>(this.ApiUrl + '/InsuranceClaims/', JSON.stringify(insuranceclaimapplication), this.httpOptions)    
+  } 
+  InsuranceClaimFetchFunc(): Observable<InsuranceClaim []> {
+    return this.httpClient.get<InsuranceClaim []>(this.ApiUrl + '/InsuranceClaims/')    
   } 
 
   fetchMarketplace(): Observable<MarketplaceCrops[]> {
@@ -64,9 +71,11 @@ export class CrudService {
   LoginFarmerPostFunc(loginfarmerpost : any): Observable<number> {
     return this.httpClient.post<number>(this.ApiUrl + '/Loginfarmercheck/', JSON.stringify(loginfarmerpost), this.httpOptions)    
   } 
+
   LoginBidderPostFunc(loginbidderpost : any): Observable<number> {
     return this.httpClient.post<number>(this.ApiUrl + '/Loginbiddercheck/', JSON.stringify(loginbidderpost), this.httpOptions)    
   } 
+
   fetchcroptype(): Observable<MarketplaceCrops[]> {
     return this.httpClient.get<MarketplaceCrops[]>(this.ApiUrl + '/MarketplaceCrops/')    
   }

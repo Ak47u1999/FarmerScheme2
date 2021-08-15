@@ -13,35 +13,45 @@ import { Router } from '@angular/router';
 })
 export class LoginFarmerComponent implements OnInit {
 
-  loginfarmerform ! : FormGroup;
+  loginfarmerform !: FormGroup;
   Loginfarmer !: Loginfeildfarmer;
-  val : number =0;
+  val: number = -100;
 
-  constructor(public service:CrudService, public fb :FormBuilder,private router: Router) { }
+  constructor(public service: CrudService, public fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
+    this.loginfarmerform = this.fb.group({
+      Uname: [],
+      Password: [],
+    })
+  }
 
-    this.loginfarmerform=this.fb.group({
-      Uname : [],
-      Password : [] ,
-      })}
-
-      gotoFarmerreg()
-      {
-        this.router.navigate(['FarmerRegistration'])
-      }
-      gotoFarmerwelcome()
-      {
-        this.router.navigate(['FarmerWelcome'])
-      }
+  gotoFarmerreg() {
+    this.router.navigate(['FarmerRegistration'])
+  }
+  gotoFarmerwelcome() {
+    this.router.navigate(['FarmerWelcome'])
+  }
 
   submitForm() {
     this.loginfarmerform.value.isValid = false;
-    this.service.LoginFarmerPostFunc(this.loginfarmerform.value).subscribe(
-      (page: number) => {
-      this.val=page;
-  });
+    if(this.loginfarmerform.value.Uname == null)
+      this.loginfarmerform.value.Uname="NoSuchExists";
+    if(this.loginfarmerform.value.Password == null)
+      this.loginfarmerform.value.Password="NoSuchExists";
 
-  }
+      this.service.LoginFarmerPostFunc(this.loginfarmerform.value).subscribe(
+      (page: number) => {
+        this.val = page;
+      });
+
+      if(this.val ==0)
+      {
+        alert("Wrong password!");
+        this.val=-100;
+      }
+      if(this.val == 1)
+      this.gotoFarmerwelcome();
+    }
 
 }

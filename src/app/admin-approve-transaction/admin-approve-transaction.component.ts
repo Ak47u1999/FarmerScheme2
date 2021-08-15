@@ -23,5 +23,9 @@ export class AdminApproveTransactionComponent implements OnInit {
       
     });
   }
+  gotoadminhome()
+  { 
+    this.router.navigate(['admin'])
+  }
 
 }

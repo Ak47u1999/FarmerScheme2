@@ -1,65 +1,94 @@
-label{
-    font-family:  Calibri, 'Trebuchet MS', sans-serif;
-    width: 200px;
-    display: inline-block;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* .main{
+.body {
+    font-family: 'Roboto', sans-serif;
+    background-size: cover;
+    height: 60vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+}
 
-	background-image: url('../../assets/homeImages/farmer(2).jpg');
-} */
-#form{
-	
-	/* display: flex; */
-	justify-content: center;
-	padding-top: 5%;
-	padding-right: 15%;
-	padding-left: 15%;
-	padding-bottom: 10%; 
-	/*border:solid rgb;*/
-	width: 300px;
-    height: 80%;
-	margin-bottom: 180px;
-	margin-top: 10%;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-    color:black;
-    font-size: 20px;
-	padding:30px 35px;
+.container{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    height: 270px;
+    width: 170px;
+    margin-right: 2rem;
     cursor: pointer;
-	opacity: 0.9;
-	border: 3px solid greenyellow;
-	border-radius: 10px;
-	background-color:#D3D3D3;
+    min-width: 250px;
 }
 
-input[type=email], input[type=password] {
-	width: 100%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	box-sizing: border-box;
-  }
-  
-  input[type=submit] {
-	background-color:rgba(41, 128, 0, 0.836);
-	color: white;
-	padding: 14px 20px;
-	margin: 8px 0;
-	border: none;
-	cursor: pointer;
-	width: 100%;
-  }
-  
-  input[type=submit]:hover {
-	opacity: 0.8;
-  }
-  #signup{
-	padding-top: 10%;
-  }
+.card1 {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    height: 150px;
+    width: 150px;
+    margin-right: 2rem;
+    cursor: pointer;
+    min-width: 250px;
+}
 
-  .error{
-    color:red;
-  }
+.card:hover .gradient {
+    opacity: 1;
+}
+
+.gradient {
+    background-image: linear-gradient(0deg, #0703fa, transparent);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.card1:hover .gradient {
+    opacity: 1;
+}
+
+
+.info {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.info1 {
+    position: absolute;
+    top: 40%;
+    font-size: 10px;
+    transform: translateY(-50%);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.text {
+    font-size: 2.1em;
+}
+
+.title {
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+.time {
+    position: absolute;
+    bottom: 0;
+    padding: 2rem;
+}

@@ -21,5 +21,9 @@ export class AdminApproveBiddeeerComponent implements OnInit {
       
     });
   }
+  gotoadminhome()
+  { 
+    this.router.navigate(['admin'])
+  }
 
 }

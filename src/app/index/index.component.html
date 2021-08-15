@@ -1,45 +1,34 @@
-
-
-<!doctype html>
-<html>
-<head>
-<title>Insurance</title>
-<meta name="description" content="Insurance">
-<meta name="keywords" content="html tutorial template">
 <style>
-    .navbar{
-        display: flex;
-        border-style: solid;
-        border-color: rgb(1, 190, 190);
-        border-width:  5px; /* 20px top and bottom, 5px on the sides */
+    
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      padding:50px;
     }
-    .Body{
-        margin-top: 12%;
-        text-align: center;
-        align-items: center;
-        height: 500px;}
-    .box{
-        border-style: solid;
-        border-color: rgb(1, 190, 190);
-        border-width:  5px; /* 20px top and bottom, 5px on the sides */
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
     }
-    .main a{
-        text-decoration: none;
-        font-size: larger;
+    
+    tr {
+      background-color: #dddddd;
     }
-</style>
-</head>
-<body>
-<section class="box">
+    </style>
+
+
 
    
-    <section class = "Body">
+    <!-- <section class = "Body">
         <ul class= "main"><p (click)="Applyforpolicy()">Apply for Policy</p> </ul>
         <ul class= "main"><p (click)="ClaimInsurance()">Claim Insurance</p></ul>
         <router-outlet> </router-outlet>
-    </section>
+    </section> -->
+    <table>
+        <tr><td><p (click)="Applyforpolicy()">Apply for Policy</p></td></tr>
+        <tr><td><p (click)="ClaimInsurance()">Claim Insurance</p></td></tr>
+    </table>
 
 
-</section>
-</body>
-</html>
