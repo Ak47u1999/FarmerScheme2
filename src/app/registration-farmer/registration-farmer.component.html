@@ -1,235 +1,204 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("https://www.google.com/search?q=agricultre&tbm=isch&ved=2ahUKEwimu9uJpbPyAhWkISsKHffjDrQQ2-cCegQIABAA&oq=agricultre&gs_lcp=CgNpbWcQARgAMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBggAEAoQGDIGCAAQChAYMgYIABAKEBgyBggAEAoQGDIGCAAQChAYOggIABCxAxCDAToICAAQgAQQsQM6BAgAEAM6CwgAEIAEELEDEIMBUN4RWLIxYNs-aAFwAHgAgAF-iAHECZIBBDEuMTCYAQCgAQGqAQtnd3Mtd2l6LWltZ7ABAMABAQ&sclient=img&ei=lCsZYaahD6TDrAH3x7ugCw&bih=837&biw=1707#imgrc=IC5GNHLknZeIaM");
 
-    <!DOCTYPE html>
-    <html>
-    <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-image:url("https://www.google.com/search?q=agricultre&tbm=isch&ved=2ahUKEwimu9uJpbPyAhWkISsKHffjDrQQ2-cCegQIABAA&oq=agricultre&gs_lcp=CgNpbWcQARgAMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBggAEAoQGDIGCAAQChAYMgYIABAKEBgyBggAEAoQGDIGCAAQChAYOggIABCxAxCDAToICAAQgAQQsQM6BAgAEAM6CwgAEIAEELEDEIMBUN4RWLIxYNs-aAFwAHgAgAF-iAHECZIBBDEuMTCYAQCgAQGqAQtnd3Mtd2l6LWltZ7ABAMABAQ&sclient=img&ei=lCsZYaahD6TDrAH3x7ugCw&bih=837&biw=1707#imgrc=IC5GNHLknZeIaM");
-     
-    padding:100px 400px 100px 400px;
+    padding: 100px 400px 100px 400px;
   }
-    * {box-sizing: border-box}
-    
-    /* Full-width input fields */
-    input[type=text], input[type=password],input[type=select],input[type=file] ,input[type=number] {
-      width: 100%;
-      padding: 15px;
-      margin: 5px 0 22px 0;
-      display: inline-block;
-      border: none;
-      background: #f1f1f1;
-    }
-    
-    input[type=text]:focus, input[type=password]:focus,input[type=file]:focus ,input[type=number]:focus  {
-      background-color: #ddd;
-      outline: none;
-    }
-    
-     select:focus{
-      background-color: #ddd;
-      outline: none;
-     }
+  .required:after {
+    content: " *";
+    color: red;
+  }
 
-     select{
-      width: 100%;
-      padding: 15px;
-      margin: 5px 0 22px 0;
-      display: inline-block;
-      border: none;
-      background: #f1f1f1;
-     }
+  * {
+    box-sizing: border-box
+  }
+
+  /* Full-width input fields */
+  input[type=text],
+  input[type=password],
+  input[type=select],
+  input[type=file],
+  input[type=number] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+
+  input[type=text]:focus,
+  input[type=password]:focus,
+  input[type=file]:focus,
+  input[type=number]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  select:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  select {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
 
 
-    hr {
-      border: 1px solid #f1f1f1;
-      margin-bottom: 25px;
-    }
-    
-    /* Set a style for all buttons */
-    button {
-      background-color: #04AA6D;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      opacity: 0.9;
-    }
-    
-    button:hover {
-      opacity:1;
-    }
-    
-    /* Extra styles for the cancel button */
-    .cancelbtn {
-      padding: 14px 20px;
-      background-color: #f44336;
-    }
-    
-    /* Float cancel and signup buttons and add an equal width */
-    .cancelbtn, .signupbtn {
-      float: left;
-      width: 50%;
-    }
-    
-    /* Add padding to container elements */
-    .container {
-      padding: 16px;
-      background-color: #D5EEBB;
-      
-       /* background-image:url("https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.stack.imgur.com%2FwN3s7.png&imgrefurl=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F25464473%2Fangled-full-width-background-with-wave-form&tbnid=EiOyM4uN9FfeyM&vet=12ahUKEwijvoONorPyAhWaHXIKHeGzCP4QMygnegUIARCrAg..i&docid=Md8SKn_tMvtv4M&w=1920&h=1000&q=background%20form%20image&ved=2ahUKEwijvoONorPyAhWaHXIKHeGzCP4QMygnegUIARCrAg");
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+
+  /* Set a style for all buttons */
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+
+  button:hover {
+    opacity: 1;
+  }
+
+  /* Extra styles for the cancel button */
+  .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+  }
+
+  /* Float cancel and signup buttons and add an equal width */
+  .cancelbtn,
+  .signupbtn {
+    float: left;
+    width: 50%;
+  }
+
+  /* Add padding to container elements */
+  .container {
+    padding: 16px;
+    background-color: #D5EEBB;
+
+    /* background-image:url("https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.stack.imgur.com%2FwN3s7.png&imgrefurl=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F25464473%2Fangled-full-width-background-with-wave-form&tbnid=EiOyM4uN9FfeyM&vet=12ahUKEwijvoONorPyAhWaHXIKHeGzCP4QMygnegUIARCrAg..i&docid=Md8SKn_tMvtv4M&w=1920&h=1000&q=background%20form%20image&ved=2ahUKEwijvoONorPyAhWaHXIKHeGzCP4QMygnegUIARCrAg");
     */
-     
-    }
-    
-    /* Clear floats */
-    .clearfix::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-    
-    /* Change styles for cancel button and signup button on extra small screens */
-    @media screen and (max-width: 300px) {
-      .cancelbtn, .signupbtn {
-         width: 100%;
-      }
-    }
-    </style>
-    <body>
-    
-    <form [formGroup]="farmerRegistrationForm" (ngSubmit)="submitForm()" novalidate  style="border:1px solid #ccc">
-      <div class="container">
-        <h1>Sign Up</h1>
-        <br>
-        <p>Please fill in this form to create an account.</p>
-        <hr>
-        <h5><b>Personal Details</b></h5>
-        <br>
-        <hr>
 
-       <!--  <div class="form-group">
-            <label><b>ID</b></label>
-            <input type="number" placeholder="Enter id" formControlName="BidderId" class="form-control" maxlength="50">
-        </div> -->
+  }
 
-         
-       <div class="form-group">
-         <label><b>Full Name</b></label>
-         <input type="text" placeholder="Enter name" formControlName="FarmerName" class="form-control" maxlength="50" />
-      </div> 
+  /* Clear floats */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /* Change styles for cancel button and signup button on extra small screens */
+  @media screen and (max-width: 300px) {
+
+    .cancelbtn,
+    .signupbtn {
+      width: 100%;
+    }
+  }
+</style>
+
+<body>
+
+  <form [formGroup]="farmerRegistrationForm" (ngSubmit)="submitForm()" novalidate style="border:1px solid #ccc">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <br>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <h5><b>Personal Details</b></h5>
+      <br>
+      <hr>
+
+
       <div class="form-group">
-         <label><b>Contact number</b></label>
-         <input type="text" placeholder="Enter Contact No." formControlName="PhoneNumber" class="form-control" maxlength="50" />
+        <label><b>Full Name</b></label>
+        <input type="text" placeholder="Enter name" formControlName="FarmerName" class="form-control" maxlength="50" />
       </div>
       <div class="form-group">
-         <label><b>E-Mail ID</b></label>
-         <input type="text" placeholder="Enter Email Id" formControlName="FarmerMailId" class="form-control" maxlength="50" />
+        <label><b>Contact number</b></label>
+        <input type="text" placeholder="Enter Contact No." formControlName="PhoneNumber" class="form-control"
+          maxlength="50" />
       </div>
-   
-         <hr>
+      <div class="form-group">
+        <label><b>E-Mail ID</b></label>
+        <input type="text" placeholder="Enter Email Id" formControlName="FarmerMailId" class="form-control"
+          maxlength="50" />
+      </div>
+
+      <hr>
       <h5><b>Crop Details</b></h5>
       <br>
       <hr>
-         
-
-<p><b>Crop Details</b></p>
-<div class="form-group">
-   <select formControlName="CropType" class="form-control">
-      <option value="Kharif" selected>Kharif</option>
-      <option value="Rabi">Rabi</option>
-      <option value="Horticulture">Horticulture</option>
-    </select>         
-</div>
-<div class="form-group">
-   <label><b>Crop Name</b></label>
-   <input type="text"  placeholder="Enter crop name" formControlName="CropName" class="form-control" maxlength="50" />
-</div>
 
 
- 
-<hr>
-  <h5><b>Bank Details</b></h5>
-  <hr>
-
-
-  <div class="form-group">
-   <!-- <p>Bank Details</p> -->
-   <label><b>Bank Account Number</b></label>
-   <input type="text" placeholder="Enter Bank Account no" formControlName="BankAccNo" class="form-control" maxlength="50" />
-</div>
-<div class="form-group">
-   <label><b>Bank IFSC </b></label>
-   <input type="text" placeholder="Enter Bank IFSC no" formControlName="BankIfsc" class="form-control" maxlength="50" />
-</div>
-<div class="form-group">
-   <label style="padding:5px;"><b>Document Upload</b></label>
-   <input type="file" class="form-control" (click)="this.uploadstatus()"/>
-</div>
-<div class="form-group">
-   <label><b>Password </b></label>
-   <input type="password"  placeholder="Enter password" formControlName="FarmerPassword" class="form-control" maxlength="50" />
-</div>
-
-
-
-
-
-  <!-- <div class="uploads">
-      <p><b>Document Upload</b></p>
-      <label>Aadhaar</label>
-      <input class="button" type="checkbox" name="aadhar">
-       &nbsp;&nbsp;
-      <label>PAN </label>
-      <input class="button" type="checkbox" name="pan">
-      &nbsp;&nbsp;
-      <label>Trader License</label>
-      <input class="button" type="checkbox" name="traderlicence">
-
-
-  </div> -->
-  <br>
-
-
-
-
-
-    <!-- 
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
-     -->
-      
-      
-        <div class="clearfix">
-          <button type="submit" class="signupbtn">NEXT</button>
-        </div>
+      <p><b>Crop Details</b></p>
+      <div class="form-group">
+        <select formControlName="CropType" class="form-control">
+          <option value="Kharif" selected>Kharif</option>
+          <option value="Rabi">Rabi</option>
+          <option value="Horticulture">Horticulture</option>
+        </select>
       </div>
-    </form>
-    
-    </body>
-    </html>
-    
+      <div class="form-group">
+        <label><b>Crop Name</b></label>
+        <input type="text" placeholder="Enter crop name" formControlName="CropName" class="form-control"
+          maxlength="50" />
+      </div>
 
 
 
+      <hr>
+      <h5><b>Bank Details</b></h5>
+      <hr>
 
 
+      <div class="form-group">
+        <!-- <p>Bank Details</p> -->
+        <label><b>Bank Account Number</b></label>
+        <input type="text" placeholder="Enter Bank Account no" formControlName="BankAccNo" class="form-control"
+          maxlength="50" />
+      </div>
+      <div class="form-group">
+        <label><b>Bank IFSC </b></label>
+        <input type="text" placeholder="Enter Bank IFSC no" formControlName="BankIfsc" class="form-control"
+          maxlength="50" />
+      </div>
+      <div class="form-group">
+        <label style="padding:5px;"><b>Document Upload</b></label>
+        <input type="file" class="form-control" (click)="this.uploadstatus()" />
+      </div>
+      <div class="form-group">
+        <label><b>Password </b></label>
+        <input type="password" placeholder="Enter password" formControlName="FarmerPassword" class="form-control"
+          maxlength="50" />
+      </div>
 
 
+      <br>
 
+      <div class="clearfix">
+        <button type="submit" class="signupbtn">NEXT</button>
+      </div>
+    </div>
+  </form>
 
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>

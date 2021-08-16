@@ -13,48 +13,45 @@ import { Router } from '@angular/router';
 export class LoginBidderComponent implements OnInit {
   bidderloginForm!: FormGroup;
   LoginBidder !: Loginfeildfarmer;
-  val : number =-100;
+  val: number = -100;
 
-  constructor(public service:CrudService, public fb :FormBuilder,private router: Router) { }
+  constructor(public service: CrudService, public fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
 
-    this.bidderloginForm=this.fb.group({
-      Uname : [],
-      Password : [] ,
-      })
+    this.bidderloginForm = this.fb.group({
+      Uname: [],
+      Password: [],
+    })
   }
 
 
-  submitForm(){
+  submitForm() {
     this.bidderloginForm.value.isValid = false;
-    if(this.bidderloginForm.value.Uname == null)
-      this.bidderloginForm.value.Uname="NoSuchExists";
-    if(this.bidderloginForm.value.Password == null)
-      this.bidderloginForm.value.Password="NoSuchExists";
+    if (this.bidderloginForm.value.Uname == null)
+      this.bidderloginForm.value.Uname = "NoSuchExists";
+    if (this.bidderloginForm.value.Password == null)
+      this.bidderloginForm.value.Password = "NoSuchExists";
 
-      this.service.LoginBidderPostFunc(this.bidderloginForm.value).subscribe(
+    this.service.LoginBidderPostFunc(this.bidderloginForm.value).subscribe(
       (page: number) => {
         console.log(page);
-      this.val=page;
-   });
+        this.val = page;
+      });
 
-   if(this.val == 1)
-    this.gotoBidderwelcome();
-   else
-    if(this.val ==0)
-    {
-      alert("Wrong password!");
-      this.val=-100;
-    }
+    if (this.val == 1)
+      this.gotoBidderwelcome();
+    else
+      if (this.val == 0) {
+        alert("Wrong password!");
+        this.val = -100;
+      }
   }
 
-  gotoBidderwelcome()
-  { 
+  gotoBidderwelcome() {
     this.router.navigate(['bidderwelcome'])
   }
-  gotoBidderreg()
-  { 
+  gotoBidderreg() {
     this.router.navigate(['BidderRegistration'])
   }
 }

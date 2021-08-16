@@ -13,13 +13,11 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  Applyforpolicy()
-  {
+  Applyforpolicy() {
     this.router.navigate(['Applyforpolicy'])
   }
 
-  ClaimInsurance()
-  {
+  ClaimInsurance() {
     this.router.navigate(['ClaimInsurance'])
   }
 

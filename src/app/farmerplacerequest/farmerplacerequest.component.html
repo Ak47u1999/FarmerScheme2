@@ -1,127 +1,119 @@
 <style>
- 
-body{
-    background-image:  url("https://ak.picdn.net/shutterstock/videos/7553389/thumb/1.jpg");
-      height: 100%; 
+  body {
+    background-image: url("https://ak.picdn.net/shutterstock/videos/7553389/thumb/1.jpg");
+    height: 100%;
     opacity: 1;
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-}
-    input[type=text], select {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-    input[type=number], select {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-    input[type=date], select {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-    
-    input[type=submit] {
-      width: 100%;
-      background-color: #4CAF50;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    
-    input[type=submit]:hover {
-      background-color: #45a049;
-    }
-    
-    /* div {
-      border-radius: 5px;
-      background-color: green;
-      padding: 20px;
-    } */
-    .box
-    {
-        padding-left: 400px;
-        padding-right: 400px;
-        padding-top:100px;
-        padding-bottom: 100px;
-        
-    }
-    .button {
-  background-color: #D9DD6B; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  border-radius:8px;
-}
-    </style>
-    
-      <body>  
-   <div class="box">
-            <h1>Place sell request</h1>
-            <form [formGroup]="farmerplacerequest" (ngSubmit)="submitForm()" novalidate>
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-                <!-- <div class="form-group">
-                    <label>Request ID</label>
-                    <input type="number" formControlName="requestId" class="form-control"
-                        value="{{this.requestIdpost}}" readonly>
-                </div> -->
-                <!-- <div class="form-group">
-                    <label>Farmer ID</label>
-                    <input type="number" formControlName="farmerId" class="form-control">
-                </div> -->
-                <div class="form-group">
-                    <label>Crop Name</label>
-                    <input type="text" formControlName="cropName" class="form-control" maxlength="50">
-                </div>
-                <div class="form-group">
-                    <label>Crop Type</label>
-                    <select formControlName="cropType" class="form-control">
-                        <option value="Kharif">Kharif</option>
-                        <option value="Rabi">Rabi</option>
-                        <option value="Horticulture">Horticulture</option>
-                    </select>
-                    <!-- <input type="text" formControlName="cropType" class="form-control" maxlength="50"> -->
-                </div>
-                <div class="form-group">
-                    <label>Fertilizer Type</label>
-                    <input type="text" formControlName="fertilizerType" class="form-control" maxlength="50">
-                </div>
-                <div class="form-group">
-                    <label>Quantity</label>
-                    <input type="number" formControlName="quantity" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label>Posted Date</label>
-                    <input type="date" formControlName="postedDate" class="form-control">
-                </div>
+  }
+
+  input[type=text],
+  select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=number],
+  select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=date],
+  select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  .box {
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+  }
+
+  .button {
+    background-color: #D9DD6B;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+</style>
+
+<body>
+  <div class="box">
+    <h1>Place sell request</h1>
+    <form [formGroup]="farmerplacerequest" (ngSubmit)="submitForm()" novalidate>
 
 
-                <button type="submit" class="button" >Place sell request</button>
-            </form>
-        </div>
-      </body>
-  
+      <div class="form-group">
+        <label>Crop Name</label>
+        <input type="text" formControlName="cropName" class="form-control" maxlength="50">
+      </div>
+      <div class="form-group">
+        <label>Crop Type</label>
+        <select formControlName="cropType" class="form-control">
+          <option value="Kharif">Kharif</option>
+          <option value="Rabi">Rabi</option>
+          <option value="Horticulture">Horticulture</option>
+        </select>
+        <!-- <input type="text" formControlName="cropType" class="form-control" maxlength="50"> -->
+      </div>
+      <div class="form-group">
+        <label>Fertilizer Type</label>
+        <input type="text" formControlName="fertilizerType" class="form-control" maxlength="50">
+      </div>
+      <div class="form-group">
+        <label>Quantity</label>
+        <input type="number" formControlName="quantity" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Posted Date</label>
+        <input type="date" formControlName="postedDate" class="form-control">
+      </div>
+
+
+      <button type="submit" class="button">Place sell request</button>
+    </form>
+  </div>
+</body>

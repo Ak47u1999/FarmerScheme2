@@ -1,74 +1,69 @@
 <style>
-    
-    table {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      background-color:white;
-      width: 100%;
-      padding:50px;
-    }
-    
-    td, th {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-    }
-    
-    tr:nth-child(even) {
-      background-color: #dddddd;
-    }
-    .box{
-      padding-top:200px;
-      padding-left: 50px;
-      padding-right:50px;
-    }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    background-color: white;
+    width: 100%;
+    padding: 50px;
+  }
 
-    
-.bg-img{
-  background-image: url("https://www.theindiaforum.in/sites/default/files/field/image/2021/05/28/ramkumar-radhakrishnan-wikimedia-1622193304.jpeg");
-   height: 96vh;
-   background-size: cover;
-   background-position: center;
- }
-    </style>
-    <body class="bg-img">    <div>
-                            <div class="box">
-                                <table class="table">
-                                  <br>
-                                  <br>
-                                  <br>
-                                  <br>
-                                    <thead>
-                                        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                                        <th>Date of Sale</th>
-                                        <th>Crop Name</th>
-                                        <th>Quantity</th>
-                                        <th>Minimum Sale Price</th>
-                                        <th>Sold Price</th>
-                                        <th>Total Price</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let s of soldhistory ">
-                                            <td>{{s.soldDate}}</td>
-                                            <td>{{s.cropName}}</td>
-                                            <td>{{s.quantity}}</td>
-                                            <td>₹ {{s.msp}}</td>
-                                            <td>₹ {{s.soldPrice}}</td>
-                                            <td>₹ {{s.totalPrice}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <button type="button" (click)="gotofarmerwelcome()">Back</button>
-                            </div>
-        
-                        
-               
-           
-       
-        <br><br><br><br><br><br><br><br><br><br><br>
-                        </div>
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
 
-                      </body>
- 
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .box {
+    padding-top: 200px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 
 
+  .bg-img {
+    background-image: url("https://www.theindiaforum.in/sites/default/files/field/image/2021/05/28/ramkumar-radhakrishnan-wikimedia-1622193304.jpeg");
+    height: 96vh;
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+
+<body class="bg-img">
+  <div>
+    <div class="box">
+      <table class="table">
+        <br>
+        <br>
+        <br>
+        <br>
+        <thead>
+          <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+          <th>Date of Sale</th>
+          <th>Crop Name</th>
+          <th>Quantity</th>
+          <th>Minimum Sale Price</th>
+          <th>Sold Price</th>
+          <th>Total Price</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of soldhistory ">
+            <td>{{s.soldDate}}</td>
+            <td>{{s.cropName}}</td>
+            <td>{{s.quantity}}</td>
+            <td>₹ {{s.msp}}</td>
+            <td>₹ {{s.soldPrice}}</td>
+            <td>₹ {{s.totalPrice}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" (click)="gotofarmerwelcome()">Back</button>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+
+</body>

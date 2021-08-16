@@ -12,37 +12,36 @@ import { Router } from '@angular/router';
 })
 export class RegistrationBidderComponent implements OnInit {
   BidderRegistrationForm!: FormGroup;
-  bidder!:BidderIdentity;
-  bidderidentityfetchvar : BidderIdentity [] = [];
+  bidder!: BidderIdentity;
+  bidderidentityfetchvar: BidderIdentity[] = [];
 
-  aadharStatus : number =0;
-  panStatus : number =0;
-  tlStatus : number =0;
+  aadharStatus: number = 0;
+  panStatus: number = 0;
+  tlStatus: number = 0;
 
-  constructor(public service:CrudService, public fb :FormBuilder,private router: Router) { }
+  constructor(public service: CrudService, public fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
 
-    this.BidderRegistrationForm=this.fb.group({
-    BidderId : [],
-    BidderName : [],
-    BidderPhoneNumber : [] ,
-    BidderMailId : [] ,
-    BidderBankAccNo : [] ,
-    BidderBankIfsc : [] ,
-    BidderDocumentStatus : [],
-    BidderPassword : [],
-    BidderAdminApprovalStatus : [],
+    this.BidderRegistrationForm = this.fb.group({
+      BidderId: [],
+      BidderName: [],
+      BidderPhoneNumber: [],
+      BidderMailId: [],
+      BidderBankAccNo: [],
+      BidderBankIfsc: [],
+      BidderDocumentStatus: [],
+      BidderPassword: [],
+      BidderAdminApprovalStatus: [],
     })
 
-    this.service.BidderIdentityFetchFunc().subscribe((data : BidderIdentity[]) => {this.bidderidentityfetchvar=data})
+    this.service.BidderIdentityFetchFunc().subscribe((data: BidderIdentity[]) => { this.bidderidentityfetchvar = data })
   }
-  gotobidderaddress()
-  {  this.router.navigate(['bidderaddress']) }
+  gotobidderaddress() { this.router.navigate(['bidderaddress']) }
 
-  aadhar() {this.aadharStatus=1;}
-  pan() {this.panStatus=1;}
-  tl() {this.tlStatus=1;}
+  aadhar() { this.aadharStatus = 1; }
+  pan() { this.panStatus = 1; }
+  tl() { this.tlStatus = 1; }
 
   submitForm() {
 
@@ -52,7 +51,7 @@ export class RegistrationBidderComponent implements OnInit {
       this.gotobidderaddress();
     }
     else
-      alert("Please upload all documents");
+      alert("Please fill all required fields");
   }
 
 }

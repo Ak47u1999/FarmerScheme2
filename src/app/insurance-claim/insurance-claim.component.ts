@@ -11,45 +11,43 @@ import { CrudService } from '../services/crud.service';
   styleUrls: ['./insurance-claim.component.css']
 })
 export class InsuranceClaimComponent implements OnInit {
-  insuranceclaimform! : FormGroup;
-  insuranceclaim!: InsuranceClaim; 
-  insuranceclaimfetchvar : InsuranceClaim [] =[];
-  insuranceapplicationfetchvar :InsuranceApplication []= [];
+  insuranceclaimform!: FormGroup;
+  insuranceclaim!: InsuranceClaim;
+  insuranceclaimfetchvar: InsuranceClaim[] = [];
+  insuranceapplicationfetchvar: InsuranceApplication[] = [];
 
-  constructor(public service :CrudService, public fb: FormBuilder,private router: Router) { }
+  constructor(public service: CrudService, public fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
-    this.insuranceclaimform =this.fb.group({
+    this.insuranceclaimform = this.fb.group({
       ClaimId: [],
-      DateOfRequest:[],
-      PolicyNo:[],
-      CauseOfLoss:[],
-      DateOfLoss:[],
-      ClaimStatus:[],
+      DateOfRequest: [],
+      PolicyNo: [],
+      CauseOfLoss: [],
+      DateOfLoss: [],
+      ClaimStatus: [],
 
     })
 
-    this.service.InsuranceClaimFetchFunc().subscribe((data : InsuranceClaim []) => {this.insuranceclaimfetchvar=data});
-    this.service.InsuranceApplicationFetchFunc().subscribe((data : InsuranceApplication[]) => {this.insuranceapplicationfetchvar=data});
+    this.service.InsuranceClaimFetchFunc().subscribe((data: InsuranceClaim[]) => { this.insuranceclaimfetchvar = data });
+    this.service.InsuranceApplicationFetchFunc().subscribe((data: InsuranceApplication[]) => { this.insuranceapplicationfetchvar = data });
   }
 
   submitForm() {
 
-    this.insuranceclaimform.value.ClaimId=this.insuranceclaimfetchvar.length+1;
-    this.insuranceclaimform.value.ClaimStatus=false;
+    this.insuranceclaimform.value.ClaimId = this.insuranceclaimfetchvar.length + 1;
+    this.insuranceclaimform.value.ClaimStatus = false;
 
-    if(this.insuranceclaimform.value.PolicyNo > this.insuranceapplicationfetchvar.length)
-     alert("Please Enter Correct Policy Number");
-    else
-    {
-     this.service.InsuranceClaimFunc(this.insuranceclaimform.value).subscribe();
+    if (this.insuranceclaimform.value.PolicyNo > this.insuranceapplicationfetchvar.length)
+      alert("Please Enter Correct Policy Number");
+    else {
+      this.service.InsuranceClaimFunc(this.insuranceclaimform.value).subscribe();
       alert("Claimed submitted!");
       this.gotofarmerwelcome();
     }
   }
 
-  gotofarmerwelcome()
-  {
+  gotofarmerwelcome() {
     this.router.navigate(['FarmerWelcome'])
   }
 

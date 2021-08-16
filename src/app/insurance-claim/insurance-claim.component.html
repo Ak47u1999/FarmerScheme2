@@ -1,206 +1,128 @@
-
 <style>
-body{
-    background-image:  url("https://ak.picdn.net/shutterstock/videos/7553389/thumb/1.jpg");
-      height: 100%; 
-    opacity: 1;
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-}
-input[type=text], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-input[type=number], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-input[type=date], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
+    body {
+        background-image: url("https://ak.picdn.net/shutterstock/videos/7553389/thumb/1.jpg");
+        height: 100%;
+        opacity: 1;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+    }
 
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-/* 
+    input[type=text],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=number],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=date],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    /* 
 div {
   border-radius: 5px;
   background-color: white;
   padding: 20px;
 } */
-.box
-{
-    padding-left: 400px;
-    padding-right: 400px;
-    padding-top:100px;
-    padding-bottom: 100px;
-    
-}
-.button {
-  background-color: #D9DD6B; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  border-radius:8px;
-}
+    .box {
+        padding-left: 400px;
+        padding-right: 400px;
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+    }
+
+    .button {
+        background-color: #D9DD6B;
+        /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        border-radius: 8px;
+    }
 </style>
 
-      <body>  
-   
-        <div class="box">
-            
-            <form [formGroup] = "insuranceclaimform" (ngSubmit)="submitForm()" novalidate>
-                <p class = "form-group"><b>Claim Details</b></p>
-                    <!-- <div class="form-group">
+<body>
+
+    <div class="box">
+
+        <form [formGroup]="insuranceclaimform" (ngSubmit)="submitForm()" novalidate>
+            <p class="form-group"><b>Claim Details</b></p>
+            <!-- <div class="form-group">
                         <label>Claim Id</label>
                         <input type="number" formControlName="ClaimId" class="form-control" value="{{this.insuranceclaimfetchvar.length+1}}" readonly>
                     </div> -->
-            
-                    <div class="form-group">
-                        <label>Date Of Request</label>
-                        <input type="date" formControlName="DateOfRequest" class="form-control" maxlength="10" >
-                    </div>
-            
-                    <div class="form-group">
-                        <label> Policy Number</label>
-                        <input type="number" formControlName="PolicyNo" class="form-control" placeholder="Enter Policy Number">
-                    </div>
-            
-            
-                    <div class="form-group">
-                        <label>Cause Of Loss</label>
-                        <input type="text" formControlName="CauseOfLoss" class="form-control" placeholder="Cause Of Loss">
-                    </div>                 
-            
-                    <div class="form-group">
-                        <label>Date Of Loss</label>
-                        <input type="date" formControlName="DateOfLoss" class="form-control" >
-                    </div>
-        
-                    <div class="buttonbox">
-                    
-                        <button class="button" type="submit" >Submit</button>
 
-                    </div>
-            </form>
-        </div>
-    </body>
-         
-    
-<!-- 
-<div>
-    <h1>Insurance Claim</h1>
-    <form [formGroup] = "insuranceclaimform" (ngSubmit)="submitForm()" novalidate>
-        <p>Claim Details</p>
             <div class="form-group">
-                <label>ClaimId</label>
-                <input type="number" formControlName="ClaimId" class="form-control" maxlength="50">
-            </div>
-    
-            <div class="form-group">
-                <label>DateOfRequest</label>
+                <label>Date Of Request</label>
                 <input type="date" formControlName="DateOfRequest" class="form-control" maxlength="10">
             </div>
-    
+
             <div class="form-group">
-                <label> PolicyNo </label>
-                <input type="number" formControlName="PolicyNo" class="form-control" >
+                <label> Policy Number</label>
+                <input type="number" formControlName="PolicyNo" class="form-control" placeholder="Enter Policy Number">
             </div>
-    
-    
+
+
             <div class="form-group">
-                <label>CauseOfLoss</label>
-                <input type="text" formControlName="CauseOfLoss" class="form-control" >
-            </div>
-            
-             
-    
-            <div class="form-group">
-                <label>DateOfLoss</label>
-                <input type="date" formControlName="DateOfLoss" class="form-control" >
+                <label>Cause Of Loss</label>
+                <input type="text" formControlName="CauseOfLoss" class="form-control" placeholder="Cause Of Loss">
             </div>
 
             <div class="form-group">
-                <label>ClaimStatus</label>
-                <input type="checkbox" formControlName="ClaimStatus" class="form-control" >
+                <label>Date Of Loss</label>
+                <input type="date" formControlName="DateOfLoss" class="form-control">
             </div>
-    
-           
-    
-    
-    
-    
-                <button type="submit"> Reset</button>&nbsp;&nbsp;
-            
-                <button type="submit"> Calculate</button>
-            
-    
-           
-        
-    
-    </form>
-    
-     
-    <p>create works!</p>
-    
-    <div>
-        <h1>Create Product</h1>
-        <form [formGroup]="productForm" (ngSubmit)="submitForm()" novalidate>
-            <div class="form-group">
-                <label>ID</label>
-                <input type="number" formControlName="id" class="form-control" maxlength="20">
+
+            <div class="buttonbox">
+
+                <button class="button" type="submit">Submit</button>
+
             </div>
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text" formControlName="name" class="form-control" maxlength="20">
-            </div>
-            <div class="form-group">
-                <label>Description</label>
-                <textarea class="form-control" formControlName="description" rows="3" maxlength="50"></textarea>
-            </div>
-            <div class="form-group">
-                <label>Price</label>
-                <input type="number" formControlName="price" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Quantity</label>
-                <input type="number" formControlName="quantity" class="form-control">
-            </div>
-            <button type="submit">Submit</button>
         </form>
-    </div> -->
-    
+    </div>
+</body>

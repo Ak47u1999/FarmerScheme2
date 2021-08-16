@@ -12,29 +12,28 @@ import { BidderIdentity } from 'src/models/BidderIdentity';
 })
 export class RegistrationBidderAddressComponent implements OnInit {
 
-  bidderAddressRegistrationForm! : FormGroup;
-  bidderaddress! : BidderAddress;
-  bidderidentityfetchvar : BidderIdentity [] = [];
+  bidderAddressRegistrationForm!: FormGroup;
+  bidderaddress!: BidderAddress;
+  bidderidentityfetchvar: BidderIdentity[] = [];
 
-  constructor(public service :CrudService, public fb :FormBuilder,private router: Router) { }
+  constructor(public service: CrudService, public fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.bidderAddressRegistrationForm = this.fb.group({
-     BidderId :[],
-     BidderAddress1 :[],
-     BidderCity :[],
-     BidderState :[],
-     BidderPincode : [],
+      BidderId: [],
+      BidderAddress1: [],
+      BidderCity: [],
+      BidderState: [],
+      BidderPincode: [],
     })
-    
-    this.service.BidderIdentityFetchFunc().subscribe((data : BidderIdentity[]) => {this.bidderidentityfetchvar=data})
+
+    this.service.BidderIdentityFetchFunc().subscribe((data: BidderIdentity[]) => { this.bidderidentityfetchvar = data })
 
   }
-  gotobidderloginagain()
-  {  this.router.navigate(['BidderLogin']) }
-  submitForm(){
+  gotobidderloginagain() { this.router.navigate(['BidderLogin']) }
+  submitForm() {
 
-    this.bidderAddressRegistrationForm.value.BidderId=this.bidderidentityfetchvar.length-1;
+    this.bidderAddressRegistrationForm.value.BidderId = this.bidderidentityfetchvar.length - 1;
     this.service.BidderAddressRegistrationFunc(this.bidderAddressRegistrationForm.value).subscribe();
     alert("Registration Successful!");
     this.router.navigate(['BidderLogin']);

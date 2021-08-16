@@ -10,19 +10,17 @@ import { CrudService } from '../services/crud.service';
   styleUrls: ['./marketplace.component.css']
 })
 export class MarketplaceComponent implements OnInit {
-  
-  viewmarketplace:MarketplaceCrops[]=[];
-  constructor(public service :CrudService,private router: Router) { }
+
+  viewmarketplace: MarketplaceCrops[] = [];
+  constructor(public service: CrudService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.fetchMarketplace().subscribe((data: MarketplaceCrops[])=>{
+    this.service.fetchMarketplace().subscribe((data: MarketplaceCrops[]) => {
       console.log(data)
-      this.viewmarketplace = data;});  
+      this.viewmarketplace = data;
+    });
   }
-  gotofarmerwelcome()
-  {
-    
-
-   this.router.navigate(['FarmerWelcome'])
+  gotofarmerwelcome() {
+    this.router.navigate(['FarmerWelcome'])
   }
 }
