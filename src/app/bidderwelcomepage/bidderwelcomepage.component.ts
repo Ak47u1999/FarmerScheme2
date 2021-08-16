@@ -11,27 +11,13 @@ import { Router } from '@angular/router';
   templateUrl: './bidderwelcomepage.component.html',
   styleUrls: ['./bidderwelcomepage.component.css']
 })
+
 export class BidderwelcomepageComponent implements OnInit {
   crops: MarketplaceCrops[] = [];
   public highestbid123 : number =0;
   
-  // currentbid: MarketPlaceTransactions[] = [];
-  // bidderposthisbidform !: FormGroup;
-  // bidderbid !: MarketPlaceTransactions;
-
-  // tosendrequestId: number = 0;
-  // tosendtransactionId: number = 0;
-
   constructor(public service: CrudService, public fb: FormBuilder, private router: Router) {
 
-    // this.bidderposthisbidform = this.fb.group({
-    //   transactionId: [],
-    //   requestId: [],
-    //   bidderId: [],
-    //   bidAmount: [],
-    //   bidDate: [],
-    //   bidAdminApprovalStatus: [],
-    // })
   }
 
   ngOnInit(): void {
@@ -46,17 +32,12 @@ export class BidderwelcomepageComponent implements OnInit {
       }
     });
 
-    // this.service.fetchcurrentbid().subscribe((data: MarketPlaceTransactions[]) => {
-    //   console.log(data)
-    //   this.currentbid = data;
-
-    // });
   }
   gotohome() { this.router.navigate(['HomepageComponent']) }
 
 
   bidcheck(requestid: number) {
-    //    console.log(this.highestbid,requestid);
+
     if (this.crops[requestid - 1].highestBid >= this.highestbid123)
       alert("Please enter Higher Bid");
     else {
@@ -66,15 +47,4 @@ export class BidderwelcomepageComponent implements OnInit {
     }
   }
 
-    // submitForm() {
-      
-      
-
-    //   // this.bidderposthisbidform.value.transactionId = this.currentbid.length + 1;
-    //   // this.bidderposthisbidform.value.requestId = this.crops.length + 1;
-
-    //   // this.service.BidderBidPostFunc(this.bidderposthisbidform.value).subscribe();
-    //   /* this.router.navigate(['BidderLogin']); */
-    //   /*  this.gotohome(); */
-    // }
-  }
+}

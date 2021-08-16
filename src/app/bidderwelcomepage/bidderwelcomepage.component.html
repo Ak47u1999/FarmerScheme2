@@ -1,288 +1,166 @@
 <style>
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color:whitesmoke;
-      padding: 200px 400px 200px 400px;
-      background-image:url("assets/about(1).jpeg")
-
-}
-.form{
-    padding:20px;
-    
-}
-.new{
-    background-color:white;
-}
-    
-.button {
-  background-color:  #2691d9;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 10px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 8px;
-}
-.button:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-    * {
-      box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: whitesmoke;
+        padding: 200px 400px 200px 400px;
+        background-image: url("assets/about(1).jpeg")
     }
-    
+
+    .form {
+        padding: 20px;
+
+    }
+
+    .new {
+        background-color: white;
+    }
+
+    .button {
+        background-color: #2691d9;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 10px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
+    .button:hover {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
     /* Add padding to containers */
     .container {
-      padding: 16px;
-      background-color: white;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
+        padding: 16px;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
     }
-    
+
     /* Full-width input fields */
-    input[type=text], input[type=password],input[type=number] {
-      width: 100%;
-      padding: 15px;
-      margin: 5px 0 22px 0;
-      display: inline-block;
-      border: none;
-      background: #f1f1f1;
+    input[type=text],
+    input[type=password],
+    input[type=number] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
     }
-    
-   /*  input[type=text]:focus, input[type=password]:focus,input[type=number]:focus {
-      background-color: #ddd;
-      outline: none;
-    } */
-    
+
     /* Overwrite default styles of hr */
     hr {
-      border: 1px solid #f1f1f1;
-      margin-bottom: 25px;
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
     }
-    
+
     /* Set a style for the submit button */
     .registerbtn {
-      background-color: #2691d9;
-      color: white;
-      padding: 16px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      opacity: 0.9;
+        background-color: #2691d9;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
     }
-    
+
     .registerbtn:hover {
-      opacity: 1;
+        opacity: 1;
     }
-    
+
     /* Add a blue text color to links */
     a {
-      color: dodgerblue;
+        color: dodgerblue;
     }
-    
+
     /* Set a grey background color and center the text of the "sign in" section */
     .signin {
-      background-color: #f1f1f1;
-      text-align: center;
+        background-color: #f1f1f1;
+        text-align: center;
     }
+
     /* body{
   background-image:  url('assets/about(1).jpeg');
   
 } */
-    
-      table {
+
+    table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
         width: 100%;
-        padding:50px;
-      }
-      
-      td, th {
+        padding: 50px;
+    }
+
+    td,
+    th {
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
-      }
-      
-      tr:nth-child(even) {
+    }
+
+    tr:nth-child(even) {
         background-color: #dddddd;
-      }
-      .form{ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-     }
-      </style>
-  <body>
-        <div id="title">
-            <h1 style="text-align: center;padding:10px;">Welcome Bidder</h1>
-            <br>
-        </div>
-        <div class="banner" id="banner">
-            <div class="bg-overlay2">
-                <div class="contact" id="contact">
-                    <div class="container">
+    }
+
+    .form {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+</style>
+
+<body>
+    <div id="title">
+        <h1 style="text-align: center;padding:10px;">Welcome Bidder</h1>
+        <br>
+    </div>
+    <div class="banner" id="banner">
+        <div class="bg-overlay2">
+            <div class="contact" id="contact">
+                <div class="container">
+                    <div>
                         <div>
-                            <div>
-                                <div class="text-center">
-                                    <h3>Bidding</h3>
-                                </div>
+                            <div class="text-center">
+                                <h3>Bidding</h3>
                             </div>
-                            <div>
-                                <br>
-                                <table border="1" width="100%">
-                                    <thead>
-                                        <th>Crop Name </th>
-                                        <th>Crop Type</th>
-                                        <th>Quantity</th>
-                                        <th>Highest Bid</th>
-                                        <th>Please enter Bid Amount</th>
-                                        <th>Confirm</th>
-                                        
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let c of crops">
-                                            
-                                            <td>{{c.cropName}}</td>
-                                            <td>{{c.cropType}}</td>
-                                            <td>{{c.quantity}}</td>
-                                            <td>{{c.highestBid}}</td>
-                                            <td><input type="number"  [(ngModel)]="this.highestbid123"></td>                                        
-                                            <td><button class="button"(click)="this.bidcheck(c.requestId)">Confirm</button></td>                                      
-                                    </tbody>
-                                </table>
-                            </div>
-                          <!--   <div class="table">
-                                <table class="table" border="1">
-                                    <thead>
-                                        <th>Current Bid</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let c of currentbid,let i = index"  ><td>{{c.bidAmount}}</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-         -->
+                        </div>
+                        <div>
+                            <br>
+                            <table border="1" width="100%">
+                                <thead>
+                                    <th>Crop Name </th>
+                                    <th>Crop Type</th>
+                                    <th>Quantity</th>
+                                    <th>Highest Bid</th>
+                                    <th>Please enter Bid Amount</th>
+                                    <th>Confirm</th>
+
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let c of crops">
+
+                                        <td>{{c.cropName}}</td>
+                                        <td>{{c.cropType}}</td>
+                                        <td>{{c.quantity}}</td>
+                                        <td>{{c.highestBid}}</td>
+                                        <td><input type="number" [(ngModel)]="this.highestbid123"></td>
+                                        <td><button class="button" (click)="this.bidcheck(c.requestId)">Confirm</button>
+                                        </td>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <br><br>
             </div>
+            <br><br>
         </div>
-
-
-<!-- ####################################### -->
-<!-- 
-        <br>
-        <br>
- <p>hello</p>
-        <div *ngFor="let c of currentbid;  let i = index">
-                        <div>{{currentbid[i].bidAmount}}</div>
-                        <div>{{s.cropName}}</div>
-          </div> -->
-
-
-        <!-- <div class="new">
-        <form class="form" [formGroup]="bidderposthisbidform" (ngSubmit)="submitForm()" novalidate>
-             
-            
-            <div class="form-group">
-                <label>Transaction Id</label>
-                <input type="number" formControlName="transactionId" class="form-control" value="{{this.tosendtransactionId}}" readonly>
-            </div>
-            <div class="form-group">
-                <label>Request Id</label>
-                <input type="number" formControlName="requestId" class="form-control" value="{{this.tosendrequestId}}" readonly>
-            </div>
-            <div class="form-group">
-                <label>Bidder Id</label>
-                <input type="number" formControlName="bidderId" class="form-control" >
-            </div>
-            <div class="form-group">
-                <label>Bid Amount</label>
-                <input type="number" formControlName="bidAmount" class="form-control" >
-            </div>
-            <div class="form-group">
-                <label>Bid Date</label>
-                <input type="date" formControlName="bidDate" class="form-control" >
-            </div>
-            <div class="buttonbox">
-
-                <button type="submit" class="button" (click)="gotohome()">Confirm</button>
-            </div>
-
-        </form>
     </div>
-    </body> -->
-    
-<!-- <div class="banner" id="banner">
-    <div class="bg-overlay2">
-        <div class="contact" id="contact">
-            <div class="container">
-                <div>
-                    <div>
-                        <div class="text-center">
-                            <h3>Bidding</h3>
-                        </div>
-                    </div>
-                    <div>
-                        <table class="table" border="1">
-                            <thead>
-                                <th>Crop Name </th>
-                                <th>Crop Type</th>
-                                <th>Quantity</th>
-                                
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let s of crops ">
-                                    
-                                    <td>{{s.cropName}}</td>
-                                    <td>{{s.cropType}}</td>
-                                    <td>{{s.quantity}}</td>   
-                                </tr >
-                               
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                        <table class="table" border="1">
-                            <thead>
-                                <th>Current Bid</th>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let c of currentbid"  ><td>{{c.bidAmount}}</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <br><br>
-    </div>
-</div>
-
-<form [formGroup]="bidderposthisbidform" (ngSubmit)="submitForm()" novalidate>
-     
-    
-    <div class="form-group">
-        <label>Transaction Id</label>
-        <input type="number" formControlName="transactionId" class="form-control" value="{{this.tosendtransactionId}}" readonly>
-    </div>
-    <div class="form-group">
-        <label>Request Id</label>
-        <input type="number" formControlName="requestId" class="form-control" value="{{this.tosendrequestId}}" readonly>
-    </div>
-    <div class="form-group">
-        <label>Bidder Id</label>
-        <input type="number" formControlName="bidderId" class="form-control" >
-    </div>
-    <div class="form-group">
-        <label>Bid Amount</label>
-        <input type="number" formControlName="bidAmount" class="form-control" >
-    </div>
-    <div class="form-group">
-        <label>Bid Date</label>
-        <input type="date" formControlName="bidDate" class="form-control" >
-    </div> -->
-    
