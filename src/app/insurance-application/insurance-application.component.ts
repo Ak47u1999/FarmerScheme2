@@ -49,13 +49,9 @@ export class InsuranceApplicationComponent implements OnInit {
     this.router.navigate(['FarmerWelcome'])
   }
 
-  submitForm() {
-    
-    if(this.insuranceApplicationForm.value.FarmerId > this.farmeridentity.length)
-     alert("Please enter correct Farmer Id");
-    else {
-      this.insuranceApplicationForm.value.PolicyNo = this.insurancefetchvar.length + 1;
-      // console.log(this.insuranceApplicationForm.value.TotalSumInsured);
+  Calculate()
+  {
+
       if (this.insuranceApplicationForm.value.CropName === "Kharif")
         this.premiumamt = 0.02 * this.insuranceApplicationForm.value.TotalSumInsured;
       else
@@ -68,9 +64,21 @@ export class InsuranceApplicationComponent implements OnInit {
       this.insuranceApplicationForm.value.PremiumAmount = this.premiumamt;
       this.insuranceApplicationForm.value.SumInsuredPerHecter = this.suminsuredperhectare;
 
+  }
+
+  submitForm() {
+    
+    if(this.insuranceApplicationForm.value.FarmerId > this.farmeridentity.length)
+     alert("Please enter correct Farmer Id");
+    else {
+      this.insuranceApplicationForm.value.PolicyNo = this.insurancefetchvar.length + 1;
+      // console.log(this.insuranceApplicationForm.value.TotalSumInsured);
+     
       alert("Insurance application submitted Successfully!");
 
       this.service.InsuranceApplicationFunc(this.insuranceApplicationForm.value).subscribe();
+
+      this.gotofarmerwelcome();
     }
   }
 

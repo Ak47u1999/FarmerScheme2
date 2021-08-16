@@ -23,6 +23,6 @@ export class MarketplaceComponent implements OnInit {
   {
     
 
-   this.router.navigate(['Homepage'])
+   this.router.navigate(['FarmerWelcome'])
   }
 }

@@ -52,10 +52,10 @@
       background: #f1f1f1;
     }
     
-    input[type=text]:focus, input[type=password]:focus,input[type=number]:focus {
+   /*  input[type=text]:focus, input[type=password]:focus,input[type=number]:focus {
       background-color: #ddd;
       outline: none;
-    }
+    } */
     
     /* Overwrite default styles of hr */
     hr {
@@ -115,7 +115,8 @@
       </style>
   <body>
         <div id="title">
-            <h1 style="text-align: center;padding:10px;">Bidder Welcome</h1>
+            <h1 style="text-align: center;padding:10px;">Welcome Bidder</h1>
+            <br>
         </div>
         <div class="banner" id="banner">
             <div class="bg-overlay2">
@@ -128,46 +129,64 @@
                                 </div>
                             </div>
                             <div>
+                                <br>
                                 <table border="1" width="100%">
                                     <thead>
                                         <th>Crop Name </th>
                                         <th>Crop Type</th>
                                         <th>Quantity</th>
+                                        <th>Highest Bid</th>
+                                        <th>Please enter Bid Amount</th>
+                                        <th>Confirm</th>
                                         
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let s of crops ">
+                                        <tr *ngFor="let c of crops">
                                             
-                                            <td>{{s.cropName}}</td>
-                                            <td>{{s.cropType}}</td>
-                                            <td>{{s.quantity}}</td>   
-                                        </tr >
-                                       
+                                            <td>{{c.cropName}}</td>
+                                            <td>{{c.cropType}}</td>
+                                            <td>{{c.quantity}}</td>
+                                            <td>{{c.highestBid}}</td>
+                                            <td><input type="number"  [(ngModel)]="this.highestbid123"></td>                                        
+                                            <td><button class="button"(click)="this.bidcheck(c.requestId)">Confirm</button></td>                                      
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="table">
+                          <!--   <div class="table">
                                 <table class="table" border="1">
                                     <thead>
                                         <th>Current Bid</th>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let c of currentbid"  ><td>{{c.bidAmount}}</td></tr>
+                                        <tr *ngFor="let c of currentbid,let i = index"  ><td>{{c.bidAmount}}</td></tr>
                                     </tbody>
                                 </table>
                             </div>
-        
+         -->
                         </div>
                     </div>
                 </div>
                 <br><br>
             </div>
         </div>
-        <div class="new">
+
+
+<!-- ####################################### -->
+<!-- 
+        <br>
+        <br>
+ <p>hello</p>
+        <div *ngFor="let c of currentbid;  let i = index">
+                        <div>{{currentbid[i].bidAmount}}</div>
+                        <div>{{s.cropName}}</div>
+          </div> -->
+
+
+        <!-- <div class="new">
         <form class="form" [formGroup]="bidderposthisbidform" (ngSubmit)="submitForm()" novalidate>
              
             
-            <!-- <div class="form-group">
+            <div class="form-group">
                 <label>Transaction Id</label>
                 <input type="number" formControlName="transactionId" class="form-control" value="{{this.tosendtransactionId}}" readonly>
             </div>
@@ -178,7 +197,7 @@
             <div class="form-group">
                 <label>Bidder Id</label>
                 <input type="number" formControlName="bidderId" class="form-control" >
-            </div> -->
+            </div>
             <div class="form-group">
                 <label>Bid Amount</label>
                 <input type="number" formControlName="bidAmount" class="form-control" >
@@ -194,7 +213,7 @@
 
         </form>
     </div>
-    </body>
+    </body> -->
     
 <!-- <div class="banner" id="banner">
     <div class="bg-overlay2">
@@ -265,5 +284,5 @@
     <div class="form-group">
         <label>Bid Date</label>
         <input type="date" formControlName="bidDate" class="form-control" >
-    </div>
-    <button>Confirm</button> -->
+    </div> -->
+    

@@ -42,16 +42,14 @@ export class LoginFarmerComponent implements OnInit {
 
       this.service.LoginFarmerPostFunc(this.loginfarmerform.value).subscribe(
       (page: number) => {
-        this.val = page;
+        if(!page)
+          alert("Wrong password!");
+        else
+          this.val=page;
       });
 
-      if(this.val ==0)
-      {
-        alert("Wrong password!");
-        this.val=-100;
-      }
       if(this.val == 1)
-      this.gotoFarmerwelcome();
+       this.gotoFarmerwelcome();
     }
 
 }

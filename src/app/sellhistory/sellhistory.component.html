@@ -3,6 +3,7 @@
     table {
       font-family: arial, sans-serif;
       border-collapse: collapse;
+      background-color:white;
       width: 100%;
       padding:50px;
     }
@@ -16,6 +17,11 @@
     tr:nth-child(even) {
       background-color: #dddddd;
     }
+    .box{
+      padding-top:200px;
+      padding-left: 50px;
+      padding-right:50px;
+    }
 
     
 .bg-img{
@@ -26,7 +32,7 @@
  }
     </style>
     <body class="bg-img">    <div>
-                            <div>
+                            <div class="box">
                                 <table class="table">
                                   <br>
                                   <br>
@@ -52,12 +58,14 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <button type="button" (click)="gotofarmerwelcome()">Back</button>
                             </div>
         
                         
-                <br><br><br><br><br><br><br><br><br><br><br>
+               
            
-        <button type="button" (click)="gotofarmerwelcome()">Back</button>
+       
+        <br><br><br><br><br><br><br><br><br><br><br>
                         </div>
 
                       </body>

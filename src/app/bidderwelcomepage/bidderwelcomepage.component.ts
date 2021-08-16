@@ -13,23 +13,25 @@ import { Router } from '@angular/router';
 })
 export class BidderwelcomepageComponent implements OnInit {
   crops: MarketplaceCrops[] = [];
-  currentbid: MarketPlaceTransactions[] = [];
-  bidderposthisbidform !: FormGroup;
-  bidderbid !: MarketPlaceTransactions;
+  public highestbid123 : number =0;
+  
+  // currentbid: MarketPlaceTransactions[] = [];
+  // bidderposthisbidform !: FormGroup;
+  // bidderbid !: MarketPlaceTransactions;
 
-  tosendrequestId   : number = 0;
-  tosendtransactionId  : number = 0;
+  // tosendrequestId: number = 0;
+  // tosendtransactionId: number = 0;
 
-  constructor(public service: CrudService, public fb: FormBuilder,private router: Router) {
+  constructor(public service: CrudService, public fb: FormBuilder, private router: Router) {
 
-    this.bidderposthisbidform = this.fb.group({
-      transactionId: [],
-      requestId: [],
-      bidderId: [],
-      bidAmount: [],
-      bidDate: [],
-      bidAdminApprovalStatus: [],
-    })
+    // this.bidderposthisbidform = this.fb.group({
+    //   transactionId: [],
+    //   requestId: [],
+    //   bidderId: [],
+    //   bidAmount: [],
+    //   bidDate: [],
+    //   bidAdminApprovalStatus: [],
+    // })
   }
 
   ngOnInit(): void {
@@ -37,38 +39,42 @@ export class BidderwelcomepageComponent implements OnInit {
     this.service.fetchcroptype().subscribe((data: MarketplaceCrops[]) => {
       console.log(data)
       this.crops = data;
+
+      for (let i: number = 0; i < this.crops.length; i++) {
+        if (this.crops[i].highestBid == null)
+          this.crops[i].highestBid = 0;
+      }
+    });
+
+    // this.service.fetchcurrentbid().subscribe((data: MarketPlaceTransactions[]) => {
+    //   console.log(data)
+    //   this.currentbid = data;
+
+    // });
+  }
+  gotohome() { this.router.navigate(['HomepageComponent']) }
+
+
+  bidcheck(requestid: number) {
+    //    console.log(this.highestbid,requestid);
+    if (this.crops[requestid - 1].highestBid >= this.highestbid123)
+      alert("Please enter Higher Bid");
+    else {
+      this.crops[requestid - 1].highestBid = this.highestbid123;
+      this.service.updatehighestbid(requestid, this.crops[requestid - 1]).subscribe((data: number) => console.log(data));
+      alert("Successfully placed bid");
+    }
+  }
+
+    // submitForm() {
       
-    });
+      
 
-    this.service.fetchcurrentbid().subscribe((data: MarketPlaceTransactions[]) => {
-      console.log(data)
-      this.currentbid = data;
+    //   // this.bidderposthisbidform.value.transactionId = this.currentbid.length + 1;
+    //   // this.bidderposthisbidform.value.requestId = this.crops.length + 1;
 
-      for(let i :number =0;i<this.currentbid.length;i=i+1)
-      {
-        if(this.currentbid[i].requestId > this.tosendrequestId)
-          this.tosendrequestId = this.currentbid[i].requestId;
-      }
-      this.tosendrequestId=this.tosendrequestId+1;
-
-      for(let i :number =0;i<this.currentbid.length;i=i+1)
-      {
-        if(this.currentbid[i].transactionId > this.tosendtransactionId)
-        this.tosendtransactionId = this.currentbid[i].transactionId;
-      }
-      this.tosendtransactionId=this.tosendtransactionId+1;
-    });
+    //   // this.service.BidderBidPostFunc(this.bidderposthisbidform.value).subscribe();
+    //   /* this.router.navigate(['BidderLogin']); */
+    //   /*  this.gotohome(); */
+    // }
   }
-  gotohome()
-  {  this.router.navigate(['HomepageComponent']) }
-
-
-  submitForm() {
-    this.bidderposthisbidform.value.transactionId = this.tosendtransactionId;
-    this.bidderposthisbidform.value.requestId = this.tosendrequestId;
-
-    this.service.BidderBidPostFunc(this.bidderposthisbidform.value).subscribe();
-    /* this.router.navigate(['BidderLogin']); */
-   /*  this.gotohome(); */
-  }
-}

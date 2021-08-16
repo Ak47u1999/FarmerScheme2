@@ -11,18 +11,20 @@
 }
 
 
-.bg-img{
+/* .bg-img{
   background-image: url("https://www.theindiaforum.in/sites/default/files/field/image/2021/05/28/ramkumar-radhakrishnan-wikimedia-1622193304.jpeg");
    height: 96vh;
    background-size: cover;
    background-position: center;
- }
+   opacity:0.5;
+ } */
     
     table {
       font-family: arial, sans-serif;
       border-collapse: collapse;
       width: 100%;
-      padding:600px;
+      padding-top:500px;
+      background-color: white;
     }
     
     td, th {
@@ -30,46 +32,52 @@
       text-align: left;
       padding: 8px;
     }
+    .box{
+      padding-top:200px;
+      padding-left: 50px;
+      padding-right:50px;
+    }
     
     /* tr:nth-child(even) {
       background-color: #dddddd;
     } */
     </style>
-    <body class="bg-img">
-        <div>
+    <body >
+        <div class="box">
             <table class="table" border="1">
                 <thead>
+                  <!-- <br>
                   <br>
                   <br>
                   <br>
-                  <br>
-                  <br>
+                  <br> -->
                     <tr>
                      
                         <!-- <th>#</th> -->
-                        <th>FarmerId</th>
+                        <!-- <th>FarmerId</th> -->
                         <th>CropName</th>
                         <th>CropType </th>
                         <th>FertilizerType</th>
                         <th>Quantity</th> 
-                        <th>isTransactionCompleted</th> 
+                        <!-- <th>Transaction State</th>  -->
                         <th>Posted date</th>                                                       
 
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let market of viewmarketplace">
-                        <td>{{market.farmerId}}</td>
+                        <!-- <td>{{market.farmerId}}</td> -->
                         <td>{{market.cropName}}</td>
                         <td>{{market.cropType}}</td>
                         <td>{{market.fertilizerType}}</td>
                         <td>{{market.quantity}}</td>
-                        <td>{{market.isTransactionCompleted}}</td>
+                        <!-- <td>{{market.isTransactionCompleted}}</td> -->
                         <td>{{market.postedDate}}</td>
                     </tr>
                 </tbody>
             </table>
             <button type="button" (click)="gotofarmerwelcome()">Back</button>
  </div>
+ <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
    

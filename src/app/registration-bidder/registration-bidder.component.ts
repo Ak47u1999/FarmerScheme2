@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BidderIdentity } from 'src/models/BidderIdentity';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CrudService } from '../services/crud.service';
 import { Router } from '@angular/router';
-
 
 
 @Component({
@@ -16,13 +15,17 @@ export class RegistrationBidderComponent implements OnInit {
   bidder!:BidderIdentity;
   bidderidentityfetchvar : BidderIdentity [] = [];
 
+  aadharStatus : number =0;
+  panStatus : number =0;
+  tlStatus : number =0;
+
   constructor(public service:CrudService, public fb :FormBuilder,private router: Router) { }
 
   ngOnInit(): void {
 
     this.BidderRegistrationForm=this.fb.group({
     BidderId : [],
-    BidderName : [] ,
+    BidderName : [],
     BidderPhoneNumber : [] ,
     BidderMailId : [] ,
     BidderBankAccNo : [] ,
@@ -37,11 +40,19 @@ export class RegistrationBidderComponent implements OnInit {
   gotobidderaddress()
   {  this.router.navigate(['bidderaddress']) }
 
+  aadhar() {this.aadharStatus=1;}
+  pan() {this.panStatus=1;}
+  tl() {this.tlStatus=1;}
+
   submitForm() {
 
-    this.BidderRegistrationForm.value.BidderId=this.bidderidentityfetchvar.length+1;
-    this.service.BidderRegistrationFunc(this.BidderRegistrationForm.value).subscribe();
-    this.gotobidderaddress();
+    if (this.aadharStatus == 1 && this.panStatus == 1 && this.tlStatus == 1) {
+      this.BidderRegistrationForm.value.BidderId = this.bidderidentityfetchvar.length + 1;
+      this.service.BidderRegistrationFunc(this.BidderRegistrationForm.value).subscribe();
+      this.gotobidderaddress();
+    }
+    else
+      alert("Please upload all documents");
   }
 
 }

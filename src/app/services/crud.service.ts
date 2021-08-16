@@ -118,4 +118,8 @@ export class CrudService {
   fetchtransaction(): Observable<MarketPlaceTransactions[]> {
     return this.httpClient.get<MarketPlaceTransactions[]>(this.ApiUrl + '/Marketplacetransactions/')    
   }
+
+  updatehighestbid(id :any,bid : any): Observable<number> {
+    return this.httpClient.put<number>(this.ApiUrl + '/Marketplacecrops/' +id, JSON.stringify(bid), this.httpOptions)    
+  }
 }

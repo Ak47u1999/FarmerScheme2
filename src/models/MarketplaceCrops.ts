@@ -9,4 +9,5 @@ export interface MarketplaceCrops
      quantity : number ;
      isTransactionCompleted :boolean ;
      postedDate : Date;
+     highestBid : number;
 }

@@ -201,6 +201,12 @@
       outline: none;
     }
     
+
+
+    .required:after {
+    content:" *";
+    color: red;
+  }
     hr {
       border: 1px solid #f1f1f1;
       margin-bottom: 25px;
@@ -268,13 +274,13 @@
         <h5><b>Personal Details</b></h5>
         <hr>
 
-       <!--  <div class="form-group">
+     <!--    <div class="form-group">
             <label><b>ID</b></label>
-            <input type="number" placeholder="Enter id" formControlName="BidderId" class="form-control" maxlength="50">
-        </div> -->
-
+            <input type="number" placeholder="Enter id" value="{{this.bidderidentityfetchvar.length+1}}" class="form-control" readonly>
+        </div>
+ -->
          <div class="form-group"> 
-          <label><b>Full Name</b></label>
+          <label class="required"><b>Full Name</b></label>
           <input type="text" placeholder="Enter name" formControlName="BidderName" class="form-control" maxlength="50" >
        </div> 
          
@@ -311,25 +317,25 @@
       <input type="password" placeholder="Enter password" formControlName="BidderPassword" class="form-control">
   </div>
 
-
+<!-- 
   <div class="form-group">
       <label><b>Confirm Password</b></label>
       <input type="password" placeholder="Enter Confirm password" formControlName="BidderPassword" class="form-control">
   </div>
-
+ -->
 
 
 
   <div class="uploads">
       <p><b>Document Upload</b></p>
       <label>Aadhaar</label>
-      <input class="button" type="checkbox" name="aadhar">
-       &nbsp;&nbsp;
-      <label>PAN </label>
-      <input class="button" type="checkbox" name="pan">
-      &nbsp;&nbsp;
+      <input class="file" type="file" name="aadhar" (click)="this.aadhar()">
+      <br>
+      <label>PAN&nbsp;&nbsp;&nbsp;</label>
+      <input class="file" type="file" name="pan" (click)="this.pan()">
+      <br>      
       <label>Trader License</label>
-      <input class="button" type="checkbox" name="traderlicence">
+      <input class="file" type="file" name="traderlicence" (click)="this.tl()">
 
 
   </div>
@@ -346,7 +352,7 @@
       
       
         <div class="clearfix">
-          <button class="button" (click)="gotobidderaddress()" class="signupbtn">NEXT</button>
+          <button class="submit" class="signupbtn" [disabled]="!BidderRegistrationForm.valid">NEXT</button>
         </div>
       </div>
     </form>

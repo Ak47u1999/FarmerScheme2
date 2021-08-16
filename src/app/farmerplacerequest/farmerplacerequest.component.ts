@@ -37,21 +37,13 @@ export class FarmerplacerequestComponent implements OnInit {
     this.service.FarmerFetchRequestFunc().subscribe((data: MarketplaceCrops[]) => {
       console.log(data)
       this.farmerrequestarr = data;
-
-      for(let i :number =0;i<this.farmerrequestarr.length;i=i+1)
-      {
-        if(this.farmerrequestarr[i].requestId > this.requestIdpost)
-          this.requestIdpost = this.farmerrequestarr[i].requestId;
-      }
-      this.requestIdpost=this.requestIdpost+1;
-
     });
 
     this.service.FarmerIdentityFetchFunc().subscribe((data : Farmeridentity[]) => {this.farmeridentity=data});
   }
 
    submitForm() {
-    this.farmerplacerequest.value.requestId=this.requestIdpost;
+    this.farmerplacerequest.value.requestId=this.farmerrequestarr.length+1;
 
     if(this.farmerplacerequest.value.farmerId > this.farmeridentity.length)
      alert("Please Enter correct Farmer ID");
