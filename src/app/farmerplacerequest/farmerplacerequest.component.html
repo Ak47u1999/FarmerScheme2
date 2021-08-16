@@ -1,4 +1,15 @@
 <style>
+ 
+body{
+    background-image:  url("https://ak.picdn.net/shutterstock/videos/7553389/thumb/1.jpg");
+      height: 100%; 
+    opacity: 1;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
     input[type=text], select {
       width: 100%;
       padding: 12px 20px;
@@ -42,11 +53,11 @@
       background-color: #45a049;
     }
     
-    div {
+    /* div {
       border-radius: 5px;
-      background-color: white;
+      background-color: green;
       padding: 20px;
-    }
+    } */
     .box
     {
         padding-left: 400px;
@@ -55,22 +66,33 @@
         padding-bottom: 100px;
         
     }
+    .button {
+  background-color: #D9DD6B; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius:8px;
+}
     </style>
     
-        
+      <body>  
    <div class="box">
             <h1>Place sell request</h1>
             <form [formGroup]="farmerplacerequest" (ngSubmit)="submitForm()" novalidate>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>Request ID</label>
                     <input type="number" formControlName="requestId" class="form-control"
                         value="{{this.requestIdpost}}" readonly>
-                </div>
-                <div class="form-group">
+                </div> -->
+                <!-- <div class="form-group">
                     <label>Farmer ID</label>
                     <input type="number" formControlName="farmerId" class="form-control">
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label>Crop Name</label>
                     <input type="text" formControlName="cropName" class="form-control" maxlength="50">
@@ -98,7 +120,8 @@
                 </div>
 
 
-                <button type="submit" >Place sell request</button>
+                <button type="submit" class="button" >Place sell request</button>
             </form>
         </div>
+      </body>
   

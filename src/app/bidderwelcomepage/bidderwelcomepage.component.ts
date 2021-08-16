@@ -4,6 +4,7 @@ import { MarketplaceCrops } from 'src/models/MarketplaceCrops';
 import { MarketPlaceTransactions } from 'src/models/MarketPlaceTransactions';
 import { CrudService } from '../services/crud.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bidderwelcomepage',
@@ -16,10 +17,10 @@ export class BidderwelcomepageComponent implements OnInit {
   bidderposthisbidform !: FormGroup;
   bidderbid !: MarketPlaceTransactions;
 
-  tosendrequestId   : number = -100;
-  tosendtransactionId  : number = -100;
+  tosendrequestId   : number = 0;
+  tosendtransactionId  : number = 0;
 
-  constructor(public service: CrudService, public fb: FormBuilder) {
+  constructor(public service: CrudService, public fb: FormBuilder,private router: Router) {
 
     this.bidderposthisbidform = this.fb.group({
       transactionId: [],
@@ -58,6 +59,8 @@ export class BidderwelcomepageComponent implements OnInit {
       this.tosendtransactionId=this.tosendtransactionId+1;
     });
   }
+  gotohome()
+  {  this.router.navigate(['HomepageComponent']) }
 
 
   submitForm() {
@@ -65,5 +68,7 @@ export class BidderwelcomepageComponent implements OnInit {
     this.bidderposthisbidform.value.requestId = this.tosendrequestId;
 
     this.service.BidderBidPostFunc(this.bidderposthisbidform.value).subscribe();
+    /* this.router.navigate(['BidderLogin']); */
+   /*  this.gotohome(); */
   }
 }

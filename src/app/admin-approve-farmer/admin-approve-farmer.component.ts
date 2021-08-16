@@ -23,6 +23,13 @@ export class AdminApproveFarmerComponent implements OnInit {
       
     });
   }
+
+  approve(id : any)
+  {
+    this.service.AdminApproveFarmerFunc(id).subscribe();
+    alert("Refresh to see Changes");
+  }
+
   gotoadminhome()
   { 
     this.router.navigate(['admin'])

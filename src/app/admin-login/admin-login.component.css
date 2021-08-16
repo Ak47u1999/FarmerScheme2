@@ -109,8 +109,8 @@ span a {
    user-select: none;
  }
  .bg-img{
-   background: url("https://i.postimg.cc/8cnYLpfc/ddddd.jpg");
-   height: 100vh;
+   /* background: url("../../assets/about\(1\).jpeg"); */
+   height: 96vh;
    background-size: cover;
    background-position: center;
  }

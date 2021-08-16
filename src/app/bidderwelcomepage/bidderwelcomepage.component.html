@@ -1,4 +1,98 @@
 <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color:whitesmoke;
+      padding: 200px 400px 200px 400px;
+      background-image:url("assets/about(1).jpeg")
+
+}
+.form{
+    padding:20px;
+    
+}
+.new{
+    background-color:white;
+}
+    
+.button {
+  background-color:  #2691d9;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Add padding to containers */
+    .container {
+      padding: 16px;
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+    }
+    
+    /* Full-width input fields */
+    input[type=text], input[type=password],input[type=number] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+    
+    input[type=text]:focus, input[type=password]:focus,input[type=number]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    
+    /* Overwrite default styles of hr */
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+    
+    /* Set a style for the submit button */
+    .registerbtn {
+      background-color: #2691d9;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+    
+    .registerbtn:hover {
+      opacity: 1;
+    }
+    
+    /* Add a blue text color to links */
+    a {
+      color: dodgerblue;
+    }
+    
+    /* Set a grey background color and center the text of the "sign in" section */
+    .signin {
+      background-color: #f1f1f1;
+      text-align: center;
+    }
+    /* body{
+  background-image:  url('assets/about(1).jpeg');
+  
+} */
     
       table {
         font-family: arial, sans-serif;
@@ -16,10 +110,12 @@
       tr:nth-child(even) {
         background-color: #dddddd;
       }
+      .form{ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     }
       </style>
-  
+  <body>
         <div id="title">
-            <h1>Bidder Welcome</h1>
+            <h1 style="text-align: center;padding:10px;">Bidder Welcome</h1>
         </div>
         <div class="banner" id="banner">
             <div class="bg-overlay2">
@@ -67,11 +163,11 @@
                 <br><br>
             </div>
         </div>
-        
-        <form [formGroup]="bidderposthisbidform" (ngSubmit)="submitForm()" novalidate>
+        <div class="new">
+        <form class="form" [formGroup]="bidderposthisbidform" (ngSubmit)="submitForm()" novalidate>
              
             
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label>Transaction Id</label>
                 <input type="number" formControlName="transactionId" class="form-control" value="{{this.tosendtransactionId}}" readonly>
             </div>
@@ -82,7 +178,7 @@
             <div class="form-group">
                 <label>Bidder Id</label>
                 <input type="number" formControlName="bidderId" class="form-control" >
-            </div>
+            </div> -->
             <div class="form-group">
                 <label>Bid Amount</label>
                 <input type="number" formControlName="bidAmount" class="form-control" >
@@ -93,9 +189,12 @@
             </div>
             <div class="buttonbox">
 
-                <button type="submit" class="button">Confirm</button>
+                <button type="submit" class="button" (click)="gotohome()">Confirm</button>
             </div>
+
         </form>
+    </div>
+    </body>
     
 <!-- <div class="banner" id="banner">
     <div class="bg-overlay2">

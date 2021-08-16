@@ -1,0 +1,9 @@
+
+
+  html, body, section { 
+    height: 100%;
+  }
+  section { 
+    background-image: url("https://www.theindiaforum.in/sites/default/files/field/image/2021/05/28/ramkumar-radhakrishnan-wikimedia-1622193304.jpeg")
+    no-repeat; 
+  }

@@ -15,6 +15,8 @@ export class RegistrationFarmerComponent implements OnInit {
  
   farmerRegistrationForm! : FormGroup;
   farmeridentity! : Farmeridentity;
+  farmeridentityfetchvar : Farmeridentity []=[];
+  DocumentStatus : boolean = false;
 
   constructor(public service :CrudService, public fb :FormBuilder,private router: Router) { }
 
@@ -33,11 +35,31 @@ export class RegistrationFarmerComponent implements OnInit {
      FarmerPassword : [],
      AdminApprovalStatus : [],
     })
+
+    this.service.FarmerIdentityFetchFunc().subscribe((data : Farmeridentity []) => {this.farmeridentityfetchvar=data});
   }
   gotofarmeraddress()
   { this.router.navigate(['farmeraddress']) }
   
-  submitForm() {
-    this.service.FarmerIdentityRegistrationFunc(this.farmerRegistrationForm.value).subscribe();
+  gotofarmerregistration()
+  { this.router.navigate(['FarmerRegistration']) }
+  
+  uploadstatus()
+  {
+    this.DocumentStatus=true;
+  }
+
+   submitForm() {
+
+    this.farmerRegistrationForm.value.FarmerId=this.farmeridentityfetchvar.length+1;
+    this.farmerRegistrationForm.value.AdminApprovalStatus=false;
+    this.farmerRegistrationForm.value.DocumentStatus=this.DocumentStatus;
+    if(this.DocumentStatus ==true)
+    {
+      this.service.FarmerIdentityRegistrationFunc(this.farmerRegistrationForm.value).subscribe();
+      this.gotofarmeraddress();
+    }
+    else
+      alert("Please Upload Document!");
   }
 }

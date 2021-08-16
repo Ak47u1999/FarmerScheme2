@@ -24,7 +24,11 @@ export class AdminLoginComponent implements OnInit {
   }
   submitForm()
   {
-
+    console.log(this.adminloginForm.value.Uname);
+    if(this.adminloginForm.value.Uname == "admin" && this.adminloginForm.value.Password == "admin123")
+      this.gotoadminhome();
+    else
+      alert("Wrong Credentials");
   }
   gotoadminhome()
   { 

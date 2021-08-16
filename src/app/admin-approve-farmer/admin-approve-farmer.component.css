@@ -1,3 +1,10 @@
 th {
     text-align: center;
 }
+
+.bg-img{
+    /* background: url("../../assets/about\(1\).jpeg"); */
+    height: 96vh;
+    background-size: cover;
+    background-position: center;
+  }

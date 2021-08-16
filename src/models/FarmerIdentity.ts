@@ -13,7 +13,7 @@ export interface Farmeridentity
      BankIfsc : string;
      DocumentStatus : boolean ;
      FarmerPassword : string;
-     AdminApprovalStatus : boolean ;
+     adminApprovalStatus : boolean ;
 
      Farmeraddress : FarmerAddress;
 }

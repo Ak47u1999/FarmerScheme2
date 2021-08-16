@@ -37,7 +37,7 @@ export class RegistrationBidderAddressComponent implements OnInit {
     this.bidderAddressRegistrationForm.value.BidderId=this.bidderidentityfetchvar.length-1;
     this.service.BidderAddressRegistrationFunc(this.bidderAddressRegistrationForm.value).subscribe();
     alert("Registration Successful!");
-    this.router.navigate(['bidderwelcome']);
+    this.router.navigate(['BidderLogin']);
   }
 
 }

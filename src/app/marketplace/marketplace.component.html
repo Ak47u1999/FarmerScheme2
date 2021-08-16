@@ -1,10 +1,28 @@
 <style>
+    body{
+    background-image:  url("https://ak.picdn.net/shutterstock/videos/7553389/thumb/1.jpg");
+      height: 100%; 
+    opacity: 1;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+
+.bg-img{
+  background-image: url("https://www.theindiaforum.in/sites/default/files/field/image/2021/05/28/ramkumar-radhakrishnan-wikimedia-1622193304.jpeg");
+   height: 96vh;
+   background-size: cover;
+   background-position: center;
+ }
     
     table {
       font-family: arial, sans-serif;
       border-collapse: collapse;
       width: 100%;
-      padding:50px;
+      padding:600px;
     }
     
     td, th {
@@ -13,17 +31,22 @@
       padding: 8px;
     }
     
-    tr:nth-child(even) {
+    /* tr:nth-child(even) {
       background-color: #dddddd;
-    }
+    } */
     </style>
+    <body class="bg-img">
         <div>
             <table class="table" border="1">
                 <thead>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
                     <tr>
                      
                         <!-- <th>#</th> -->
-                        <th>Request Id</th>
                         <th>FarmerId</th>
                         <th>CropName</th>
                         <th>CropType </th>
@@ -36,7 +59,6 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let market of viewmarketplace">
-                        <td>{{market.requestId}}</td>
                         <td>{{market.farmerId}}</td>
                         <td>{{market.cropName}}</td>
                         <td>{{market.cropType}}</td>
@@ -49,5 +71,5 @@
             </table>
             <button type="button" (click)="gotofarmerwelcome()">Back</button>
  </div>
-
+</body>
    

@@ -1,8 +1,13 @@
 <style>
+  div{
+        padding:50px;
+    }
     table {
       font-family: arial, sans-serif;
       border-collapse: collapse;
       width: 100%;
+      padding:50px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     
     td, th {
@@ -14,26 +19,49 @@
     tr:nth-child(even) {
       background-color: #dddddd;
     }
+    .contain{
+     padding: 100px;
+     
+   }
+   .button {
+  background-color:  #2691d9;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
     </style>
-<div>
+     <body class="bg-img">
+
+<div class="contain">
     <table border="1" width="100%">
         <thead>
-            <th>Farmer</th>
-            <th>Transaction status </th>
-            <th>status</th>
+            <th>Request ID</th>
+            <th>Transaction status</th>
+            <th>Approve</th>
             
             
         </thead>
         <tbody>
             <tr *ngFor="let s of crops ">
                 
-                <td>{{s.farmerId }}</td>
-                <td>{{s.isTransactionCompleted }}</td>
-                <td><input type="checkbox"></td>
+                <td>{{s.requestId}}</td>
+                <td>{{s.isTransactionCompleted}}</td>
+                <td><input *ngIf="s.isTransactionCompleted == false" type="checkbox" (click)="this.approve(s.requestId)"></td>
                    
             </tr >
            
         </tbody>
     </table>
-    <button type="button" (click)="gotoadminhome()">Back</button>
+    <button type="button" class="button" (click)="gotoadminhome()">Back</button>
 </div>
+<body>

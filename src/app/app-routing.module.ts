@@ -56,7 +56,9 @@ const routes: Routes = [
   {path:'bidderapprove',component: AdminApproveBiddeeerComponent},
   {path:'transactionapprove',component: AdminApproveTransactionComponent},
   {path:'requestapprove',component:AdminApproveCropsComponent },
-  {path:'adminlogin',component:AdminLoginComponent }
+  {path:'adminlogin',component:AdminLoginComponent },
+  {path:'adminhome',component:AdminHomeComponent }
+
 
 ];
 

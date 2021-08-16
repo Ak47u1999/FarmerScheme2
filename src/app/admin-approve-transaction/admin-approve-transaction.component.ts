@@ -23,6 +23,13 @@ export class AdminApproveTransactionComponent implements OnInit {
       
     });
   }
+
+  approval(id : any)
+  {
+    this.service.AdminApproveTranactionFunc(id).subscribe();
+    alert("Refresh to see changes!");
+  }
+
   gotoadminhome()
   { 
     this.router.navigate(['admin'])

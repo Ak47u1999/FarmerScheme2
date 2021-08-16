@@ -1,4 +1,4 @@
-span{
+ span{
     font-size:large;
 }
 div{
@@ -9,6 +9,12 @@ div{
     font-size:medium;
     overflow: hidden;
     position:relative; 
-    background-color:lightblue; 
+    background-color:#263238; 
 
 }
+p{
+    color:white;
+}
+hr.line{
+    border-top: 1px solid whitesmoke;
+} 

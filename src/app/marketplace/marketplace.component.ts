@@ -21,6 +21,8 @@ export class MarketplaceComponent implements OnInit {
   }
   gotofarmerwelcome()
   {
+    
+
    this.router.navigate(['Homepage'])
   }
 }

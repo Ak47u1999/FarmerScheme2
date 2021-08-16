@@ -9,7 +9,7 @@ export interface BidderIdentity
      BidderBankIfsc : string ;
      bidderDocumentStatus : boolean;
      BidderPassword : string ;
-     BidderAdminApprovalStatus :boolean;
+     bidderAdminApprovalStatus :boolean;
 
 
 }

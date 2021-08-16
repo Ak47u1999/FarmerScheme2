@@ -42,7 +42,7 @@ img{
 }
 .contain{
     position:relative;
-    min-height: 100vh;
+    min-height: 96vh;
     width: 100%;
     display: flex;
     flex-direction: column;

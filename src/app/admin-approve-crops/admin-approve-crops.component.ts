@@ -34,6 +34,12 @@ export class AdminApproveCropsComponent implements OnInit {
     });
   }
 
+  approve(id : number)
+  {
+    this.service.AdminApproveCropsFunc(id).subscribe();
+    alert("Refresh to see changes!");
+  }
+
   gotoadminhome()
   { 
     this.router.navigate(['admin'])

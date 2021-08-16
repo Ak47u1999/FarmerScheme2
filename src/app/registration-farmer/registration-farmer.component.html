@@ -1,26 +1,17 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+
+    <!DOCTYPE html>
+    <html>
+    <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background-color:whitesmoke;
-      padding:  50px 400px 50px 400px;
-    }
-    
-    * {
-      box-sizing: border-box;
-    }
-    
-    /* Add padding to containers */
-    .container {
-      padding: 16px;
-      background-color: white;
-    }
+      background-image:url("https://www.google.com/search?q=agricultre&tbm=isch&ved=2ahUKEwimu9uJpbPyAhWkISsKHffjDrQQ2-cCegQIABAA&oq=agricultre&gs_lcp=CgNpbWcQARgAMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBggAEAoQGDIGCAAQChAYMgYIABAKEBgyBggAEAoQGDIGCAAQChAYOggIABCxAxCDAToICAAQgAQQsQM6BAgAEAM6CwgAEIAEELEDEIMBUN4RWLIxYNs-aAFwAHgAgAF-iAHECZIBBDEuMTCYAQCgAQGqAQtnd3Mtd2l6LWltZ7ABAMABAQ&sclient=img&ei=lCsZYaahD6TDrAH3x7ugCw&bih=837&biw=1707#imgrc=IC5GNHLknZeIaM");
+     
+    padding:100px 400px 100px 400px;
+  }
+    * {box-sizing: border-box}
     
     /* Full-width input fields */
-    input[type=text], input[type=password],input[type=number] {
+    input[type=text], input[type=password],input[type=select],input[type=file] ,input[type=number] {
       width: 100%;
       padding: 15px;
       margin: 5px 0 22px 0;
@@ -29,22 +20,36 @@
       background: #f1f1f1;
     }
     
-    input[type=text]:focus, input[type=password]:focus,input[type=number]:focus,input[type=checkbox]:focus {
+    input[type=text]:focus, input[type=password]:focus,input[type=file]:focus ,input[type=number]:focus  {
       background-color: #ddd;
       outline: none;
     }
     
-    /* Overwrite default styles of hr */
+     select:focus{
+      background-color: #ddd;
+      outline: none;
+     }
+
+     select{
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+     }
+
+
     hr {
       border: 1px solid #f1f1f1;
       margin-bottom: 25px;
     }
     
-    /* Set a style for the submit button */
-    .registerbtn {
-      background-color: #2691d9;
+    /* Set a style for all buttons */
+    button {
+      background-color: #04AA6D;
       color: white;
-      padding: 16px 20px;
+      padding: 14px 20px;
       margin: 8px 0;
       border: none;
       cursor: pointer;
@@ -52,247 +57,179 @@
       opacity: 0.9;
     }
     
-    .registerbtn:hover {
-      opacity: 1;
+    button:hover {
+      opacity:1;
     }
     
-    /* Add a blue text color to links */
-    a {
-      color: dodgerblue;
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+      padding: 14px 20px;
+      background-color: #f44336;
     }
     
-    /* Set a grey background color and center the text of the "sign in" section */
-    .signin {
-      background-color: #f1f1f1;
-      text-align: center;
+    /* Float cancel and signup buttons and add an equal width */
+    .cancelbtn, .signupbtn {
+      float: left;
+      width: 50%;
     }
-    body{
-  background-image:  url('assets/about(1).jpeg');
-  
-}
-    </style>
-    </head>
-    <body>
     
-       
-       
-   <form  [formGroup]="farmerRegistrationForm" (ngSubmit)="submitForm()" novalidate >
-    <div class="container">
-    <p>Personal Details</p>
-    
-        <div class="form-group">
-            <div class="form-group">
-                <label>ID</label>
-                <input type="number" formControlName="FarmerId"   class="form-control" />
-             </div>
-         <div class="form-group">
-            <label>Full Name</label>
-            <input type="text" formControlName="FarmerName"   class="form-control" maxlength="50"/>
-         </div>
-         <div class="form-group">
-            <label>Contact number</label>
-            <input type="text" formControlName="PhoneNumber"   class="form-control" maxlength="50"/>
-         </div>
-         <div class="form-group">
-            <label>E-Mail ID</label>
-            <input type="text" formControlName="FarmerMailId"   class="form-control" maxlength="50"/>
-         </div>
-        </div> 
-
-        <p>Crop Details</p>
-        <div class="form-group">
-            <label>Crop Type</label>
-            <input type="text" formControlName="CropType"   class="form-control" maxlength="50"/>
-         </div>
-         <div class="form-group">
-            <label>Crop Name</label>
-            <input type="text" formControlName="CropName"   class="form-control" maxlength="50"/>
-         </div>
-        
-         <div class="form-group">
-             <p>Bank Details</p>
-            <label>Bank Account Number</label>
-            <input type="text" formControlName="BankAccNo"   class="form-control" maxlength="50"/>
-         </div>
-         <div class="form-group">
-            <label>Bank IFSC </label>
-            <input type="text" formControlName="BankIfsc"   class="form-control" maxlength="50"/>
-         </div>
-         <div class="form-group">
-            <label>Document Status </label>
-            <input type="checkbox" formControlName="DocumentStatus"   class="form-control"/>
-         </div>
-         <div class="form-group">
-            <label>Password </label>
-            <input type="text" formControlName="FarmerPassword"   class="form-control" maxlength="50"/>
-         </div>
-         <div class="form-group">
-            <label>Confirm Password </label>
-            <input type="password" formControlName="FarmerPassword"   class="form-control" maxlength="50"/>
-         </div>
-         <div class="form-group">
-            <label>Status </label>
-            <input type="checkbox" formControlName="AdminApprovalStatus"   class="form-control"/>
-         </div>
-        
-         <div class="buttonbox">
-
-            <button class="button" (click)="gotofarmeraddress()"class="registerbtn">Next</button>
-        </div>
-
-         <button type="submit"> REGISTER</button> 
-        </div>
-      </form>
-</body>
-</html>
-    
- -->
-
-
-
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-
-    
-<!-- <div><p>Land Details</p>
-        <p>
-              <label for="Address">Address</label>
-                <input type="text"  name="Address" />
-            </p>
-
-            <p>
-                <label for="Area">Area</label>
-                <input type="text" name="area" />
-            </p>
-            
-            <p>
-                <label for="pin">PinCode</label>
-                <input type="int" name="pincode" />
-            </p>
-
-
-
-
-            
-        </div>
-
-        <div><p>Bank Details</p>
-               
-                <p>
-                    <label for="City">Account No</label>
-                    <input type="text" name="city" />
-                </p>
-                <p>
-                    <label for="state">IFSC Code</label>
-                    <input type="text" name="state" />
-                </p>
-                
-    
-    
-    
-    
-                
-            </div>
-        <div>
-            <p>
-                <label for="password">Password</label>
-                <input type="text" name="password" />
-            </p>
-            <p>
-                <label for="cpassword">Confirm Password</label>
-                <input type="text" name="cpassword" />
-            </p>
-        </div>
-
-<div><p>Document Upload</p>
-        <label for="myfile">Aadhaar </label>
-        <input type="file" id="myfile" name="myfile">
-
-        <label for="myfile">PAN </label>
-        <input type="file" id="myfile" name="myfile">
-
-        <label for="myfile">Trader License</label>
-        <input type="file" id="myfile" name="myfile">
-
-
-    </div>
-    <br>
-        
-
-           
-
-       
-    
-
-</form>
- --> -->
-
-
-
-
-
-
-
-
-
- <!DOCTYPE html>
-
- <html lang="en" dir="ltr">
-    <head>
-       <meta charset="utf-8">
-       <title>Farmer Login</title>
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-       
-    </head>
-    <body>
-       <div class="bg-img">
-          <div class="content">
-             <header>Farmer Login</header>
-             <form  [formGroup]="farmerRegistrationForm" (ngSubmit)="submitForm()" novalidate action="#">
-                <div class="field">
-                   <span class="fa fa-user"></span>
-                   <input type="text" formControlName="Uname" class="form-control" maxlength="50" required placeholder="Email">
-                </div>
-                <div class="field space">
-                   <span class="fa fa-lock"></span>
-                   <input type="password"  formControlName="Password" class="form-control" maxlength="50" class="pass-key" required placeholder="Password">
-                   <!-- <span class="show">SHOW</span> -->
-                </div>
-                <div class="pass">
-                   <a href="#">Forgot Password?</a>
-                </div>
-                <div class="field">
-                   <input type="submit" value="LOGIN">
-                </div>
-             </form>
-           <br>
-             <div class="signup">
-                Don't have account?
-                <a href="FarmerRegistration">Signup Now</a>
-             </div>
-          </div>
-       </div>
+    /* Add padding to container elements */
+    .container {
+      padding: 16px;
+      background-color: #D5EEBB;
       
+       /* background-image:url("https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.stack.imgur.com%2FwN3s7.png&imgrefurl=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F25464473%2Fangled-full-width-background-with-wave-form&tbnid=EiOyM4uN9FfeyM&vet=12ahUKEwijvoONorPyAhWaHXIKHeGzCP4QMygnegUIARCrAg..i&docid=Md8SKn_tMvtv4M&w=1920&h=1000&q=background%20form%20image&ved=2ahUKEwijvoONorPyAhWaHXIKHeGzCP4QMygnegUIARCrAg");
+    */
+     
+    }
+    
+    /* Clear floats */
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    
+    /* Change styles for cancel button and signup button on extra small screens */
+    @media screen and (max-width: 300px) {
+      .cancelbtn, .signupbtn {
+         width: 100%;
+      }
+    }
+    </style>
+    <body>
+    
+    <form [formGroup]="farmerRegistrationForm" (ngSubmit)="submitForm()" novalidate  style="border:1px solid #ccc">
+      <div class="container">
+        <h1>Sign Up</h1>
+        <br>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+        <h5><b>Personal Details</b></h5>
+        <br>
+        <hr>
+
+       <!--  <div class="form-group">
+            <label><b>ID</b></label>
+            <input type="number" placeholder="Enter id" formControlName="BidderId" class="form-control" maxlength="50">
+        </div> -->
+
+         
+       <div class="form-group">
+         <label><b>Full Name</b></label>
+         <input type="text" placeholder="Enter name" formControlName="FarmerName" class="form-control" maxlength="50" />
+      </div> 
+      <div class="form-group">
+         <label><b>Contact number</b></label>
+         <input type="text" placeholder="Enter Contact No." formControlName="PhoneNumber" class="form-control" maxlength="50" />
+      </div>
+      <div class="form-group">
+         <label><b>E-Mail ID</b></label>
+         <input type="text" placeholder="Enter Email Id" formControlName="FarmerMailId" class="form-control" maxlength="50" />
+      </div>
+   
+         <hr>
+      <h5><b>Crop Details</b></h5>
+      <br>
+      <hr>
+         
+
+<p><b>Crop Details</b></p>
+<div class="form-group">
+   <select formControlName="CropType" class="form-control">
+      <option value="Kharif" selected>Kharif</option>
+      <option value="Rabi">Rabi</option>
+      <option value="Horticulture">Horticulture</option>
+    </select>         
+</div>
+<div class="form-group">
+   <label><b>Crop Name</b></label>
+   <input type="text"  placeholder="Enter crop name" formControlName="CropName" class="form-control" maxlength="50" />
+</div>
+
+
+ 
+<hr>
+  <h5><b>Bank Details</b></h5>
+  <hr>
+
+
+  <div class="form-group">
+   <!-- <p>Bank Details</p> -->
+   <label><b>Bank Account Number</b></label>
+   <input type="text" placeholder="Enter Bank Account no" formControlName="BankAccNo" class="form-control" maxlength="50" />
+</div>
+<div class="form-group">
+   <label><b>Bank IFSC </b></label>
+   <input type="text" placeholder="Enter Bank IFSC no" formControlName="BankIfsc" class="form-control" maxlength="50" />
+</div>
+<div class="form-group">
+   <label style="padding:5px;"><b>Document Upload</b></label>
+   <input type="file" class="form-control" (click)="this.uploadstatus()"/>
+</div>
+<div class="form-group">
+   <label><b>Password </b></label>
+   <input type="password"  placeholder="Enter password" formControlName="FarmerPassword" class="form-control" maxlength="50" />
+</div>
+
+
+
+
+
+  <!-- <div class="uploads">
+      <p><b>Document Upload</b></p>
+      <label>Aadhaar</label>
+      <input class="button" type="checkbox" name="aadhar">
+       &nbsp;&nbsp;
+      <label>PAN </label>
+      <input class="button" type="checkbox" name="pan">
+      &nbsp;&nbsp;
+      <label>Trader License</label>
+      <input class="button" type="checkbox" name="traderlicence">
+
+
+  </div> -->
+  <br>
+
+
+
+
+
+    <!-- 
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+     -->
+      
+      
+        <div class="clearfix">
+          <button type="button"(click)="gotofarmeraddress()" class="signupbtn">NEXT</button>
+        </div>
+      </div>
+    </form>
+    
     </body>
- </html>
-  
- 
- 
- 
+    </html>
+    
 
 
 
 
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

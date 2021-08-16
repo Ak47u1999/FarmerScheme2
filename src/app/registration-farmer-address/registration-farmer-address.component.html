@@ -1,125 +1,139 @@
+
+
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background-color:whitesmoke;
-      padding: 100px 400px 100px 400px;
-    }
-    
-    * {
-      box-sizing: border-box;
-    }
-    
-    /* Add padding to containers */
-    .container {
-      padding: 16px;
-      background-color: white;
-    }
-    
-    /* Full-width input fields */
-    input[type=text], input[type=password],input[type=number] {
-      width: 100%;
-      padding: 15px;
-      margin: 5px 0 22px 0;
-      display: inline-block;
-      border: none;
-      background: #f1f1f1;
-    }
-    
-    input[type=text]:focus, input[type=password]:focus,input[type=number]:focus,input[type=checkbox]:focus {
-      background-color: #ddd;
-      outline: none;
-    }
-    
-    /* Overwrite default styles of hr */
-    hr {
-      border: 1px solid #f1f1f1;
-      margin-bottom: 25px;
-    }
-    
-    /* Set a style for the submit button */
-    .registerbtn {
-      background-color: #2691d9;
-      color: white;
-      padding: 16px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      opacity: 0.9;
-    }
-    
-    .registerbtn:hover {
-      opacity: 1;
-    }
-    
-    /* Add a blue text color to links */
-    a {
-      color: dodgerblue;
-    }
-    
-    /* Set a grey background color and center the text of the "sign in" section */
-    .signin {
-      background-color: #f1f1f1;
-      text-align: center;
-    }
-    body{
-  background-image:  url('assets/about(1).jpeg');
-  
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image:url("https://www.google.com/search?q=agricultre&tbm=isch&ved=2ahUKEwimu9uJpbPyAhWkISsKHffjDrQQ2-cCegQIABAA&oq=agricultre&gs_lcp=CgNpbWcQARgAMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBggAEAoQGDIGCAAQChAYMgYIABAKEBgyBggAEAoQGDIGCAAQChAYOggIABCxAxCDAToICAAQgAQQsQM6BAgAEAM6CwgAEIAEELEDEIMBUN4RWLIxYNs-aAFwAHgAgAF-iAHECZIBBDEuMTCYAQCgAQGqAQtnd3Mtd2l6LWltZ7ABAMABAQ&sclient=img&ei=lCsZYaahD6TDrAH3x7ugCw&bih=837&biw=1707#imgrc=IC5GNHLknZeIaM");
+ 
+padding:100px 400px 100px 400px;
 }
-background-image{opacity: 0.5;}
+* {box-sizing: border-box}
 
-    
-    </style>
-    </head>
-    <body >
-       
-   <form  [formGroup]="farmerAddressRegistrationForm" (ngSubmit)="submitForm()" novalidate >
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+  background-color: #D5EEBB;
+  
+   /* background-image:url("https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.stack.imgur.com%2FwN3s7.png&imgrefurl=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F25464473%2Fangled-full-width-background-with-wave-form&tbnid=EiOyM4uN9FfeyM&vet=12ahUKEwijvoONorPyAhWaHXIKHeGzCP4QMygnegUIARCrAg..i&docid=Md8SKn_tMvtv4M&w=1920&h=1000&q=background%20form%20image&ved=2ahUKEwijvoONorPyAhWaHXIKHeGzCP4QMygnegUIARCrAg");
+*/
+ 
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+</style>
+<body>
+
+
+
+
+  <form [formGroup]="farmerAddressRegistrationForm" (ngSubmit)="submitForm()" novalidate>
     <div class="container">
-        <!-- <label style="text-align: center;">Farmer Registration</label> -->
-    <p>Personal Details</p>
-    
-            <div class="form-group">
-                <label>ID</label>
-                <input type="number" formControlName="FarmerId"   class="form-control" />
-             </div>
-         <div class="form-group">
-            <label>House No.</label>
-            <input type="text" formControlName="FarmerAddress1"   class="form-control" maxlength="50"/>
-         </div>
-         <div class="form-group">
-            <label>City Name</label>
-            <input type="text" formControlName="FarmerCity"   class="form-control" maxlength="50"/>
-         </div>
-         <div class="form-group">
-            <label>State</label>
-            <input type="text" formControlName="FarmerState"   class="form-control" maxlength="50"/>
-         </div>
-       
+      <!-- <label style="text-align: center;">Farmer Registration</label> -->
+      <!-- <p>Personal Details</p> -->
+      <h5><b>Address Details</b></h5>
+      <hr>
 
-        <p>Land Details</p>
-        <div class="form-group">
-            <label>Pincode</label>
-            <input type="text" formControlName="FarmerPincode"   class="form-control" maxlength="50"/>
-         </div>
-         <div class="form-group">
-            <label>Land Address</label>
-            <input type="text" formControlName="FarmerLandAddress"   class="form-control" maxlength="50"/>
-         </div>
-        
-         <div class="form-group">
-            <label>Land Address Pin Code</label>
-            <input type="text" formControlName="FarmerLandAddressPinCode"   class="form-control" maxlength="50"/>
-         </div>
-         <div class="buttonbox">
+      <!-- <div class="form-group">
+        <label>Form ID</label>
+        <input type="number" formControlName="FarmerId" class="form-control"
+          value="{{this.farmeridentityfetchvar.length+1}}" readonly />
+      </div> -->
+      <div class="form-group">
+        <label><b>House Number</b></label>
+        <input type="text" placeholder="Enter address" formControlName="FarmerAddress1" class="form-control" maxlength="50" />
+      </div>
+      <div class="form-group">
+        <label><b>City Name</b></label>
+        <input type="text" placeholder="Enter city" formControlName="FarmerCity" class="form-control" maxlength="50" />
+      </div>
+      <div class="form-group">
+        <label><b>State</b></label>
+        <input type="text" placeholder="Enter state" formControlName="FarmerState" class="form-control" maxlength="50" />
+      </div>
 
-             <button  class="button" (click)="gotofarmerloginagain()"class="registerbtn"> REGISTER</button>
-            </div>
-        </div>
-     </form>
+      <div class="form-group">
+        <label><b>Pincode</b></label>
+        <input type="text" placeholder="Enter pincode" formControlName="FarmerPincode" class="form-control" maxlength="50" />
+      </div>
 
-    </body>
-    </html>
+      <h5><b>Land Details</b></h5>
+      <hr>
+      <div class="form-group">
+        <label><b>Land Address</b></label>
+        <input type="text"  placeholder="Enter land address" formControlName="FarmerLandAddress" class="form-control" maxlength="50" />
+      </div>
+
+      <div class="form-group">
+        <label><b>Land Address Pin Code</b></label>
+        <input type="text" placeholder="Enter pincode" formControlName="FarmerLandAddressPinCode" class="form-control" maxlength="50" />
+      </div>
+    <div class="clearfix">
+      <button type="submit" class="signupbtn">REGISTER</button>
+    </div>
+  </div>
+</form>
+
+</body>
+</html>

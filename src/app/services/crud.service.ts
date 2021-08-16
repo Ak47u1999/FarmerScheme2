@@ -27,6 +27,16 @@ export class CrudService {
 
   constructor(private httpClient: HttpClient) { }
 
+  AdminApproveCropsFunc(id : any): Observable<number> {
+    return this.httpClient.get<number>(this.ApiUrl + '/Marketplacecrops/' +id)    
+  } 
+  AdminApproveFarmerFunc(id : any): Observable<number> {
+    return this.httpClient.get<number>(this.ApiUrl + '/Farmeridentities/' +id)    
+  } 
+  AdminApproveTranactionFunc(id : any): Observable<number> {
+    return this.httpClient.get<number>(this.ApiUrl + '/MarketPlaceTransactions/' +id)    
+  } 
+
   FarmerIdentityRegistrationFunc(farmeridentity : any): Observable<Farmeridentity> {
     return this.httpClient.post<Farmeridentity>(this.ApiUrl + '/Farmeridentities/', JSON.stringify(farmeridentity), this.httpOptions)    
   } 
@@ -42,6 +52,12 @@ export class CrudService {
   } 
   BidderIdentityFetchFunc(): Observable<BidderIdentity[]> {
     return this.httpClient.get<BidderIdentity[]>(this.ApiUrl + '/BidderIdentities/')    
+  } 
+  BidderIdentityFetchFunc2(id : any): Observable<BidderIdentity> {
+    return this.httpClient.get<BidderIdentity>(this.ApiUrl + '/BidderIdentities/' + id)    
+  } 
+  BidderIdentityPutFunc(id : any): Observable<number> {
+    return this.httpClient.get<number>(this.ApiUrl + '/BidderIdentities/' + id)    
   } 
   BidderAddressRegistrationFunc(bidderaddress : any): Observable<BidderAddress> {
     return this.httpClient.post<BidderAddress>(this.ApiUrl + '/BidderAddresses/', JSON.stringify(bidderaddress), this.httpOptions)    
