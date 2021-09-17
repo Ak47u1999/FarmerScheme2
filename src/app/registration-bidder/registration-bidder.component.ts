@@ -46,6 +46,8 @@ export class RegistrationBidderComponent implements OnInit {
   submitForm() {
 
     if (this.aadharStatus == 1 && this.panStatus == 1 && this.tlStatus == 1) {
+
+      this.BidderRegistrationForm.value.BidderDocumentStatus=true;
       this.BidderRegistrationForm.value.BidderId = this.bidderidentityfetchvar.length + 1;
       this.service.BidderRegistrationFunc(this.BidderRegistrationForm.value).subscribe();
       this.gotobidderaddress();

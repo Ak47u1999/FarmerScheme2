@@ -16,14 +16,7 @@ export class AdminApproveCropsComponent implements OnInit {
   bidderposthisbidform !: FormGroup;
   bidderbid !: MarketPlaceTransactions;
   constructor(public service: CrudService, public fb: FormBuilder,private router:Router) { 
-    // this.bidderposthisbidform = this.fb.group({
-    //   transactionId: [],
-    //   requestId: [],
-    //   bidderId: [],
-    //   bidAmount: [],
-    //   bidDate: [],
-    //   bidAdminApprovalStatus: [],
-    // })
+    
   }
 
   ngOnInit(): void {

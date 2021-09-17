@@ -39,3 +39,4 @@ export class AdminApproveBiddeeerComponent implements OnInit {
   }
 
 }
+ 
